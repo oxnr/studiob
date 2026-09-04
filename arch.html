@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@500&family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/bar.jpg" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,16 +18,16 @@
 
   <nav class="nav">
     <span class="wordmark"><span class="s">Studio</span><span class="b">B</span></span>
-    <div class="links"><a href="#">Karte</a><a href="https://www.instagram.com/studio.b.bln/">Instagram</a><a href="https://maps.google.com/?q=Oranienstraße+168,+10999+Berlin">Oranienstr. 168</a></div>
+    <div class="links"><a href="#">Karte</a><a href="https://www.instagram.com/studio.b.bln/">Instagram</a><a href="https://www.google.com/maps/place/Studio+B/@52.5016235,13.4146316,17z/data=!3m1!4b1!4m6!3m5!1s0x47a84f69cd9906bf:0x257fa1ad01eaf12c!8m2!3d52.5016203!4d13.4172065!16s%2Fg%2F11nty3sv2d?entry=ttu&amp;g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D">Oranienstr. 168</a></div>
   </nav>
 
   <div class="stage">
     <div class="frame" aria-hidden="true">
       <div class="reel">
-        <img src="assets/bar.png" alt="" style="--d:0s">
-        <img src="assets/door.png" alt="" style="--d:-9s">
-        <img src="assets/wall.png" alt="" style="--d:-6s">
-        <img src="assets/street.png" alt="" style="--d:-3s">
+        <img src="assets/bar.jpg" alt="" fetchpriority="high" style="--d:0s">
+        <img src="assets/door.jpg" alt="" decoding="async" style="--d:-9s">
+        <img src="assets/wall.jpg" alt="" decoding="async" style="--d:-6s">
+        <img src="assets/street.jpg" alt="" decoding="async" style="--d:-3s">
       </div>
       <div class="shade"></div>
     </div>
