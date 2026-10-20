@@ -1,5 +1,5 @@
-import { translations } from './translations.js';
-import { submitReservation } from './formsubmit-service.js';
+import { translations } from './translations.js?v=20261020-native-1';
+import { submitReservation } from './formsubmit-service.js?v=20261020-native-1';
 
 const form = document.querySelector('#reservation-form');
 const status = document.querySelector('#form-status');

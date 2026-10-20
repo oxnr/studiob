@@ -53,6 +53,8 @@ Neue Fotos können nachgereicht werden; die veröffentlichte Gestaltung verwende
 
 GitHub Pages veröffentlicht `main` aus dem Repository-Root, nicht `dist/`. `CNAME` muss `studiob.bar` enthalten. Vor Push Tests und Build ausführen, danach Pages-Buildstatus sowie Live-Domain, Sprachwechsel und natives Formular prüfen. Kein Force-Push. Eine Rücknahme erfolgt durch einen neuen Revert-Commit auf `main`; die Version vor dem Redesign war `fdcfda08f17b22f87d5aaadea0fbd6962cab5717`.
 
+Bei Änderungen an Scripts, Konfiguration oder CSS die Versionsparameter in `index.html` und den Modul-Imports in `app.js` gemeinsam erhöhen. Damit laden wiederkehrende Besucher keine Kombination aus neuem HTML und alten Formular-Scripts aus dem Browser-/CDN-Cache.
+
 Die ursprüngliche Anweisung, studiob.bar nicht zu verwenden, wurde am 20. Oktober für diesen Websiteauftrag durch „Nutze unsere Seite studiob.bar als Basis“ ersetzt. Google Ads und Maps wurden dabei nicht geändert.
 
 ## Bilder und Inhalte
