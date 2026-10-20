@@ -1,5 +1,5 @@
-import { translations } from './translations.js?v=20261020-native-2';
-import { submitReservation } from './formsubmit-service.js?v=20261020-native-2';
+import { translations } from './translations.js?v=20261020-photos-1';
+import { submitReservation } from './formsubmit-service.js?v=20261020-photos-1';
 
 const form = document.querySelector('#reservation-form');
 const status = document.querySelector('#form-status');
@@ -22,6 +22,9 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(element => {
     element.textContent = t(element.dataset.i18n);
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+    element.alt = t(element.dataset.i18nAlt);
   });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
     element.placeholder = t(element.dataset.i18nPlaceholder);

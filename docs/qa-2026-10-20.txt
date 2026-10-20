@@ -78,3 +78,18 @@ Erneuter Gesamttest nach Nutzerauftrag:
 - Versand bleibt gesperrt; Aktivierung, anonymer Endpoint und Postfacheingang offen.
 - Korrigiert: abgeschlossener Button behält seinen Zustand beim Sprachwechsel.
 - QR-Generator erzeugt zeitlose Prüfanweisungen und keine veralteten Live-Aussagen.
+
+Bildintegration nach Desktop-Lieferung vom 20.10.2026:
+- 24 Originaldateien im lokalen Arbeitsbereich kopiert, Originale unverändert.
+- 19 unterschiedliche Motive; fünf -2-Kopien mit identischen Bildpixeln ausgelassen.
+- 39 responsive WebP-/JPEG-Ausgaben, insgesamt 2,42 MB, sämtliche Metadaten entfernt.
+- Hero und Açaí aktualisiert; 17 weitere Motive als Galerie (sechs sichtbar, elf
+  aufklappbar). THE SCHNITZEL zeigt Pasta und wird neutral als Pasta bezeichnet.
+- Bildquellen, Abmessungen und Verarbeitung: photo-assets-2026-10-20.json.
+- 22/22 bestehende Mock-Tests, Build, Syntax und Diffcheck bestanden.
+- Sämtliche Bildpfade/srcsets geprüft; 19 Motive vollständig verwendet.
+- Browser: Desktop 1280 px, Mobil 390 und 320 px ohne horizontalen Überlauf.
+- DE/EN/TR inklusive neuer Alternativtexte geprüft; Galerie per Maus und Enter
+  aufklappbar, alle 17 Galeriebilder geladen. Keine Browserwarnungen/JS-Fehler.
+- Assetversion 20261020-photos-1. Reservierungsversand unverändert deaktiviert;
+  keine Reservierungsanfrage oder Mail ausgelöst.

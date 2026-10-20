@@ -1,5 +1,11 @@
 export const translations = {
   de: {
+    heroPhotoAlt: "Frühstück, Bowls und Getränke im Studio B",
+    dayPhotoAlt: "Açaí Glow mit Früchten im Studio B",
+    galleryEyebrow: "AUF DEM TELLER. IM GLAS.",
+    galleryTitle: "Ein Vorgeschmack.",
+    galleryCopy: "Von Frühstück bis Lunch: Entdecke Studio B in Bildern.",
+    galleryMore: "Mehr aus unserer Küche",
     skip: "Zum Inhalt",
     navStudio: "Das Studio",
     navFood: "Essen & Trinken",
@@ -84,6 +90,12 @@ export const translations = {
     retryWarning: "Der Versandstatus ist unklar. Bitte ruf uns unter 030 67392575 an, bevor du erneut anfragst. So vermeiden wir doppelte Reservierungsanfragen.",
   },
   en: {
+    heroPhotoAlt: "Breakfast, bowls and drinks at Studio B",
+    dayPhotoAlt: "Açaí Glow with fruit at Studio B",
+    galleryEyebrow: "ON YOUR PLATE. IN YOUR GLASS.",
+    galleryTitle: "A little taste.",
+    galleryCopy: "From breakfast to lunch: a closer look at Studio B.",
+    galleryMore: "More from our kitchen",
     skip: "Skip to content",
     navStudio: "The Studio",
     navFood: "Food & Drinks",
@@ -168,6 +180,12 @@ export const translations = {
     retryWarning: "We could not confirm whether your request was sent. Please call +49 30 67392575 before trying again to avoid duplicate requests.",
   },
   tr: {
+    heroPhotoAlt: "Studio B’de kahvaltı, kaseler ve içecekler",
+    dayPhotoAlt: "Studio B’de meyveli Açaí Glow",
+    galleryEyebrow: "TABAĞINDA. BARDAĞINDA.",
+    galleryTitle: "Küçük bir tadımlık.",
+    galleryCopy: "Kahvaltıdan öğle yemeğine: Studio B’yi fotoğraflarla keşfet.",
+    galleryMore: "Mutfağımızdan daha fazlası",
     skip: "İçeriğe geç",
     navStudio: "Studio B",
     navFood: "Yeme & İçme",

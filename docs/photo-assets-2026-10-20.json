@@ -1,0 +1,540 @@
+{
+  "generated_at": "2026-10-20T17:02:40.458610+02:00",
+  "tool": "Pillow 11.3.0",
+  "processing": "Read-only originals; EXIF orientation applied, embedded sRGB profiles decoded to sRGB, Lanczos resize, WebP quality 82 / JPEG quality 87. No EXIF, GPS, XMP, or ICC metadata in outputs. No generative edits.",
+  "source_files": 24,
+  "unique_motifs": 19,
+  "duplicate_policy": "Five -2 copies have identical decoded RGB pixels to their unsuffixed originals and are omitted.",
+  "caption_notes": [
+    {
+      "source": "THE SCHNITZEL.jpg.jpeg",
+      "slug": "the-schnitzel",
+      "note": "Photo depicts a pasta dish, despite its source filename. Caption neutrally as Pasta, without inferring ingredients."
+    }
+  ],
+  "images": [
+    {
+      "source_filename": "ACAI GLOW.jpg.jpeg",
+      "slug": "acai-glow",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "3cf22f4c9b56c015a6931216b838b21a5700e2f2955e912b74bd84c84f4654f4",
+      "outputs": [
+        {
+          "path": "assets/food/acai-glow-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 23636
+        },
+        {
+          "path": "assets/food/acai-glow-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 62874
+        }
+      ]
+    },
+    {
+      "source_filename": "BAUERN FRÜSTUCK.jpg.jpeg",
+      "slug": "bauern-frustuck",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "35922e0f1d3c45c464db5f8a5f3f32213d52afe924c176150c7a1ed0ce1af249",
+      "outputs": [
+        {
+          "path": "assets/food/bauern-frustuck-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 28608
+        },
+        {
+          "path": "assets/food/bauern-frustuck-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 75546
+        }
+      ]
+    },
+    {
+      "source_filename": "GOLDEN MIX.jpg.jpeg",
+      "slug": "golden-mix",
+      "source_dimensions": [
+        5741,
+        3827
+      ],
+      "source_sha256": "f74d3422b4a9f677fc127cd12d62aefc498d7286ebc7193f328d9ce1abd287ea",
+      "outputs": [
+        {
+          "path": "assets/food/golden-mix-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 8146
+        },
+        {
+          "path": "assets/food/golden-mix-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 21068
+        }
+      ]
+    },
+    {
+      "source_filename": "MENEMEN.jpg.jpeg",
+      "slug": "menemen",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "462407491b120f88f2655c80b0f999a094ec8c8f6deaa8d1312a4bd7f0b16005",
+      "outputs": [
+        {
+          "path": "assets/food/menemen-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 44846
+        },
+        {
+          "path": "assets/food/menemen-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 130454
+        }
+      ]
+    },
+    {
+      "source_filename": "MUSLI BOWL.jpg.jpeg",
+      "slug": "musli-bowl",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "afd0cd964ed3cfb2430483b856d7a4a4fbd6a4eaaa4b2cef406f04056d98fd97",
+      "outputs": [
+        {
+          "path": "assets/food/musli-bowl-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 28202
+        },
+        {
+          "path": "assets/food/musli-bowl-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 68988
+        }
+      ]
+    },
+    {
+      "source_filename": "PASTA CREEME CHEESE.jpg.jpeg",
+      "slug": "pasta-creeme-cheese",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "0f291a2a204fce27552ee7e373eb0f25bc7fdf6bc5bfb334210b351aa2bcaffd",
+      "outputs": [
+        {
+          "path": "assets/food/pasta-creeme-cheese-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 15596
+        },
+        {
+          "path": "assets/food/pasta-creeme-cheese-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 36116
+        }
+      ]
+    },
+    {
+      "source_filename": "PASTA STUDIO B.jpg.jpeg",
+      "slug": "pasta-studio-b",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "bd75e9d118e9b8ac61e72ef516cd58a02a3fc692697938055501c84186ced3a8",
+      "outputs": [
+        {
+          "path": "assets/food/pasta-studio-b-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 19138
+        },
+        {
+          "path": "assets/food/pasta-studio-b-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 47222
+        }
+      ]
+    },
+    {
+      "source_filename": "PASTA TOMATO THERAPIE.jpg.jpeg",
+      "slug": "pasta-tomato-therapie",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "26c42eea6e614ce405ba8ea7285943d0e2c135319a065c83e62710b75586f100",
+      "outputs": [
+        {
+          "path": "assets/food/pasta-tomato-therapie-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 18486
+        },
+        {
+          "path": "assets/food/pasta-tomato-therapie-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 44368
+        }
+      ]
+    },
+    {
+      "source_filename": "REISPFANNE.jpg.jpeg",
+      "slug": "reispfanne",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "13382cd4b60a30b80a6bd1a8e5a0c87e8023300ccac90d0ec62821e2ca7d5e7b",
+      "outputs": [
+        {
+          "path": "assets/food/reispfanne-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 24760
+        },
+        {
+          "path": "assets/food/reispfanne-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 60972
+        }
+      ]
+    },
+    {
+      "source_filename": "ROASTY BEEF.jpg.jpeg",
+      "slug": "roasty-beef",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "adb765b375b40c577993e0edb440155504df39744ad05d1258d1868c9497190d",
+      "outputs": [
+        {
+          "path": "assets/food/roasty-beef-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 30986
+        },
+        {
+          "path": "assets/food/roasty-beef-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 81500
+        }
+      ]
+    },
+    {
+      "source_filename": "SALAT DE LUX.jpg.jpeg",
+      "slug": "salat-de-lux",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "e750e7fce143ad1e91e2af1d9d438252049701491df1e5a0ddf42a62a90675e7",
+      "outputs": [
+        {
+          "path": "assets/food/salat-de-lux-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 30584
+        },
+        {
+          "path": "assets/food/salat-de-lux-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 76220
+        }
+      ]
+    },
+    {
+      "source_filename": "SALMON CRUSH.jpg.jpeg",
+      "slug": "salmon-crush",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "1ad0fb9c36414ad608aba95d54c09b44f7d593813348439f47d7b616133eb070",
+      "outputs": [
+        {
+          "path": "assets/food/salmon-crush-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 28744
+        },
+        {
+          "path": "assets/food/salmon-crush-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 69178
+        }
+      ]
+    },
+    {
+      "source_filename": "SCHNITZEL SANDWICH.jpg.jpeg",
+      "slug": "schnitzel-sandwich",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "b9eae345da7d85c70f7396dc01b056580531c930b37430af0dd70a3e26d4eb4b",
+      "outputs": [
+        {
+          "path": "assets/food/schnitzel-sandwich-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 27764
+        },
+        {
+          "path": "assets/food/schnitzel-sandwich-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 72854
+        }
+      ]
+    },
+    {
+      "source_filename": "STRAWBERRY MATCHA.jpg.jpeg",
+      "slug": "strawberry-matcha",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "dfc174bd5f6a58999c252aa9a3d93bd87e146487ba035e60d0a676a16417896e",
+      "outputs": [
+        {
+          "path": "assets/food/strawberry-matcha-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 6664
+        },
+        {
+          "path": "assets/food/strawberry-matcha-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 17002
+        }
+      ]
+    },
+    {
+      "source_filename": "Studio B_HEro.jpg.jpeg",
+      "slug": "hero",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "89b803df6aa5840d8166d742199263fb79557c1a6670044d9ce6c2d3272a22e5",
+      "outputs": [
+        {
+          "path": "assets/food/hero-960.webp",
+          "dimensions": [
+            960,
+            640
+          ],
+          "bytes": 135016
+        },
+        {
+          "path": "assets/food/hero-1920.webp",
+          "dimensions": [
+            1920,
+            1280
+          ],
+          "bytes": 388124
+        },
+        {
+          "path": "assets/food/hero-social.jpg",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 262480
+        }
+      ]
+    },
+    {
+      "source_filename": "STUDIO FILET.jpg.jpeg",
+      "slug": "studio-filet",
+      "source_dimensions": [
+        5630,
+        3901
+      ],
+      "source_sha256": "652350607f557a393b42b5963530b2803f40e771c7204260342cc6fb75f80e83",
+      "outputs": [
+        {
+          "path": "assets/food/studio-filet-640.webp",
+          "dimensions": [
+            640,
+            443
+          ],
+          "bytes": 30272
+        },
+        {
+          "path": "assets/food/studio-filet-1200.webp",
+          "dimensions": [
+            1200,
+            831
+          ],
+          "bytes": 82540
+        }
+      ]
+    },
+    {
+      "source_filename": "STUDIOS FAVOURITE CHICKEN.jpg.jpeg",
+      "slug": "studios-favourite-chicken",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "bfba81888c272527c71b62e4aba953aa733e8d9d550c038ae8d51e4760d81f50",
+      "outputs": [
+        {
+          "path": "assets/food/studios-favourite-chicken-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 35432
+        },
+        {
+          "path": "assets/food/studios-favourite-chicken-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 98556
+        }
+      ]
+    },
+    {
+      "source_filename": "THE SCHNITZEL.jpg.jpeg",
+      "slug": "the-schnitzel",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "2952e31ebac15f4ab3169b1953cccfe75fdae6132dc5a16208f41aee58360c92",
+      "outputs": [
+        {
+          "path": "assets/food/the-schnitzel-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 22426
+        },
+        {
+          "path": "assets/food/the-schnitzel-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 52748
+        }
+      ]
+    },
+    {
+      "source_filename": "VEGAN LOVER.jpg.jpeg",
+      "slug": "vegan-lover",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "source_sha256": "105a325ebb21e0a9bb089b5a689aa327f8fefca4b2f0250fe328f537eb242893",
+      "outputs": [
+        {
+          "path": "assets/food/vegan-lover-640.webp",
+          "dimensions": [
+            640,
+            427
+          ],
+          "bytes": 30372
+        },
+        {
+          "path": "assets/food/vegan-lover-1200.webp",
+          "dimensions": [
+            1200,
+            800
+          ],
+          "bytes": 76802
+        }
+      ]
+    }
+  ],
+  "total_output_bytes": 2415290,
+  "output_files": 39
+}

@@ -8,7 +8,7 @@ Stand: 20. Oktober 2026. Eigener Branch `codex/studio-b-reservations`.
 Produktive Version für GitHub Pages (`main`, Repository-Root, Domain `studiob.bar`).
 Das Reservierungsformular ist direkt in die Website eingebaut. Der AJAX-Versand über FormSubmit an das Studio-B-Gmail-Postfach ist vorbereitet; Gäste bleiben auf studiob.bar. Keine Weiterleitung zum alten Buchungssystem. Bis zur E-Mail-Aktivierung und Verbindung des anonymen Formular-Endpunkts ist der Versand über `reservationEnabled: false` gesperrt, mit telefonischer Alternative. Die Empfängeradresse steht nicht im öffentlichen Code.
 
-- Bestehende Fotos, Studio-B-Schriftzug und warme dunkle Farbwelt erhalten.
+- Eigene Studio-B-Fotos, Studio-B-Schriftzug und warme dunkle Farbwelt. Die am 20.10.2026 gelieferten Fotos ergänzen Hero, Açaí-Bereich und eine aufklappbare Galerie.
 - Ergänzt: Tag-/Abendbereiche, Kontakt, Telefon, Formular und mobile Reservierungsnavigation.
 - Deutsch, Englisch und Türkisch; keine externen Fonts oder Analytics.
 - Versandadapter und Prüfungen in `formsubmit-service.js` und `tests/formsubmit.test.mjs`.
@@ -47,7 +47,7 @@ Einrichtung abschließen:
 
 Außerhalb von `https://studiob.bar` läuft das Formular als klar gekennzeichnete Vorschau ohne Versand. Ohne JavaScript bleibt der Absende-Button deaktiviert und eine Telefonalternative sichtbar. Der zuvor vorbereitete Worker (`server/` und `reservation-service.js`) bleibt als ungenutzte Alternative erhalten; er ist nicht bereitgestellt und wird nicht von `app.js` geladen.
 
-Neue Fotos können nachgereicht werden; die veröffentlichte Gestaltung verwendet vorhandene Studio-B-Aufnahmen. Die allgemeinen Betreiber-Rechtstexte bleiben verlinkt; die konkrete Verarbeitung der neuen Reservierungsanfrage ist zusätzlich direkt im Formular erläutert.
+Die Gestaltung verwendet ausschließlich vorhandene und vom Nutzer gelieferte Studio-B-Aufnahmen. Die allgemeinen Betreiber-Rechtstexte bleiben verlinkt; die konkrete Verarbeitung der neuen Reservierungsanfrage ist zusätzlich direkt im Formular erläutert.
 
 ## Veröffentlichung und Rücknahme
 
@@ -59,7 +59,7 @@ Die ursprüngliche Anweisung, studiob.bar nicht zu verwenden, wurde am 20. Oktob
 
 ## Bilder und Inhalte
 
-`assets/street.jpg`, `bar.jpg`, `wall.jpg`, `door.jpg` stammen unverändert aus dem bestehenden Repository. `assets/acai.jpeg` ist das zuvor vom Nutzer freigegebene Studio-B-Foto aus der lokalen September-Vorschau. Neue Bilder folgen laut Nutzer; feste Bildflächen und responsive Zuschnitte sind vorbereitet.
+`assets/street.jpg`, `bar.jpg`, `wall.jpg`, `door.jpg` stammen unverändert aus dem bestehenden Repository. `assets/acai.jpeg` ist das zuvor vom Nutzer freigegebene Studio-B-Foto aus der lokalen September-Vorschau. Die Lieferung vom 20.10.2026 enthält 19 unterschiedliche Motive und fünf zusätzliche Kopien mit identischen Bildpixeln. `assets/food/` enthält responsive WebP-Versionen ohne Kamerametadaten, zusätzlich ein JPEG für Linkvorschauen. Originaldateien bleiben außerhalb des öffentlichen Repositorys erhalten. Quelle, Abmessungen und Dateigrößen stehen in `docs/photo-assets-2026-10-20.json`. Die Datei `THE SCHNITZEL` zeigt Pasta und ist deshalb neutral als „Pasta“ beschriftet; Zutaten und Preise werden daraus nicht abgeleitet. Sechs Galeriebilder erscheinen direkt, elf weitere in einem auch ohne JavaScript bedienbaren Aufklappbereich.
 
 Frühstück 09–16 Uhr, Lunch 11–20 Uhr, 16 Außenplätze und Zahlarten stammen aus Betreiberangaben im Chat. Telefonnummer: 030 67392575. Es werden keine wechselnden Angebote, Preise, Gästezahlen oder Testimonials erfunden.
 
