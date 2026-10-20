@@ -12,9 +12,9 @@
   <meta property="og:type" content="website">
   <title>Studio B — Café, Kitchen & Bar · Berlin Kreuzberg</title>
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-  <link rel="stylesheet" href="./redesign.css?v=20261020-photos-1">
-  <script src="./site-config.js?v=20261020-photos-1"></script>
-  <script type="module" src="./app.js?v=20261020-photos-1"></script>
+  <link rel="stylesheet" href="./redesign.css?v=20261020-menu-1">
+  <script src="./site-config.js?v=20261020-menu-1"></script>
+  <script type="module" src="./app.js?v=20261020-menu-1"></script>
 </head>
 <body>
   <a href="#main" class="skip-link" data-i18n="skip">Zum Inhalt</a>
@@ -22,7 +22,7 @@
     <a href="#home" class="logo" aria-label="Studio B — Startseite"><span class="wordmark"><span class="s">Studio</span><span class="b">B</span></span></a>
     <nav class="desktop-nav" aria-label="Hauptnavigation">
       <a href="#studio" data-i18n="navStudio">Das Studio</a>
-      <a href="#day" data-i18n="navFood">Essen & Trinken</a>
+      <a href="./speisekarte.html" class="native-menu-link" data-i18n="navFood">Essen & Trinken</a>
       <a href="#visit" data-i18n="navVisit">Hier sind wir</a>
     </nav>
     <div class="header-actions">
@@ -33,7 +33,7 @@
       <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav"><span data-i18n="menu">Menü</span><span class="menu-lines" aria-hidden="true"></span></button>
     </div>
     <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation" hidden>
-      <a href="#studio" data-i18n="navStudio">Das Studio</a><a href="#day" data-i18n="navFood">Essen & Trinken</a><a href="#visit" data-i18n="navVisit">Hier sind wir</a><a href="#reservieren" data-i18n="reserve">Tisch anfragen</a>
+      <a href="#studio" data-i18n="navStudio">Das Studio</a><a href="./speisekarte.html" class="native-menu-link" data-i18n="navFood">Essen & Trinken</a><a href="#visit" data-i18n="navVisit">Hier sind wir</a><a href="#reservieren" data-i18n="reserve">Tisch anfragen</a>
     </nav>
   </header>
 
@@ -76,7 +76,7 @@
           <div><span data-i18n="foodLunch">Lunch, Pasta & Salate</span><span>11–20</span></div>
           <div><span data-i18n="foodCoffee">Kaffee, Matcha & Açaí</span><span aria-hidden="true">↗</span></div>
         </div>
-        <a class="button button-dark menu-link" href="https://studiob030.de/speisekarte/?mode=day"><span data-i18n="viewMenu">Zur Speisekarte</span><span aria-hidden="true">↗</span></a>
+        <a class="button button-dark menu-link" href="./speisekarte.html#speisen"><span data-i18n="viewMenu">Zur Speisekarte</span><span aria-hidden="true">↗</span></a>
       </div>
     </section>
 
@@ -103,7 +103,7 @@
           <figure><img src="./assets/food/pasta-creeme-cheese-640.webp" srcset="./assets/food/pasta-creeme-cheese-640.webp 640w, ./assets/food/pasta-creeme-cheese-1200.webp 1200w" sizes="(max-width:760px) 43vw, 28vw" alt="" width="1200" height="800" loading="lazy" decoding="async"><figcaption>Pasta Cream Cheese</figcaption></figure>
           <figure><img src="./assets/food/pasta-tomato-therapie-640.webp" srcset="./assets/food/pasta-tomato-therapie-640.webp 640w, ./assets/food/pasta-tomato-therapie-1200.webp 1200w" sizes="(max-width:760px) 43vw, 28vw" alt="" width="1200" height="800" loading="lazy" decoding="async"><figcaption>Pasta Tomato Therapie</figcaption></figure>
           <figure><img src="./assets/food/reispfanne-640.webp" srcset="./assets/food/reispfanne-640.webp 640w, ./assets/food/reispfanne-1200.webp 1200w" sizes="(max-width:760px) 43vw, 28vw" alt="" width="1200" height="800" loading="lazy" decoding="async"><figcaption>Reispfanne</figcaption></figure>
-          <figure><img src="./assets/food/the-schnitzel-640.webp" srcset="./assets/food/the-schnitzel-640.webp 640w, ./assets/food/the-schnitzel-1200.webp 1200w" sizes="(max-width:760px) 43vw, 28vw" alt="" width="1200" height="800" loading="lazy" decoding="async"><figcaption>Pasta</figcaption></figure>
+          <figure><img src="./assets/food/the-schnitzel-640.webp" srcset="./assets/food/the-schnitzel-640.webp 640w, ./assets/food/the-schnitzel-1200.webp 1200w" sizes="(max-width:760px) 43vw, 28vw" alt="" width="1200" height="800" loading="lazy" decoding="async"><figcaption>The Schnitzel</figcaption></figure>
         </div>
       </details>
     </section>
@@ -115,6 +115,7 @@
         <h2><span data-i18n="nightFirst">Der Tag geht.</span><br><em data-i18n="nightSecond">Du bleibst.</em></h2>
         <p data-i18n="nightCopy">Draußen wird es dunkler, die Gespräche werden länger. Cocktails, Longdrinks und deine Lieblingsmenschen: Willkommen auf der anderen Seite von Studio B.</p>
         <a class="button button-outline" href="#reservieren"><span data-i18n="nightCta">Ein Tisch für euren Abend</span><span aria-hidden="true">↗</span></a>
+        <a class="text-link drinks-link native-menu-link" href="./speisekarte.html#getraenke"><span data-i18n="viewDrinks">Zur Getränkekarte</span><span aria-hidden="true">↗</span></a>
       </div>
       <div class="night-footer"><span>GOOD DRINKS.</span><span>GOOD COMPANY.</span><span>STUDIO B.</span></div>
     </section>

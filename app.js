@@ -1,5 +1,5 @@
-import { translations } from './translations.js?v=20261020-photos-1';
-import { submitReservation } from './formsubmit-service.js?v=20261020-photos-1';
+import { translations } from './translations.js?v=20261020-menu-1';
+import { submitReservation } from './formsubmit-service.js?v=20261020-menu-1';
 
 const form = document.querySelector('#reservation-form');
 const status = document.querySelector('#form-status');
@@ -31,6 +31,12 @@ function setLanguage(lang) {
   });
   document.querySelectorAll('[data-lang]').forEach(button => {
     button.setAttribute('aria-pressed', String(button.dataset.lang === lang));
+  });
+  document.querySelectorAll('.native-menu-link, .menu-link').forEach(link => {
+    const target = new URL(link.href);
+    if (lang === 'de') target.searchParams.delete('lang');
+    else target.searchParams.set('lang', lang);
+    link.href = target;
   });
   for (const [name, key] of [['guests','guestsLabel'],['date','dateLabel'],['time','timeLabel']]) {
     form.elements[name].setAttribute('aria-label', t(key));

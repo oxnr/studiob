@@ -9,7 +9,8 @@
     {
       "source": "THE SCHNITZEL.jpg.jpeg",
       "slug": "the-schnitzel",
-      "note": "Photo depicts a pasta dish, despite its source filename. Caption neutrally as Pasta, without inferring ingredients."
+      "note": "Photo depicts a pasta dish, despite its source filename. Caption neutrally as Pasta, without inferring ingredients.",
+      "resolved_by": "MENU.pdf subsequently supplied on 2026-10-20 confirms The Schnitzel is Hähnchenschnitzel mit Nudeln in Käsesahnesauce. Gallery caption now uses the confirmed dish name."
     }
   ],
   "images": [

@@ -93,3 +93,19 @@ Bildintegration nach Desktop-Lieferung vom 20.10.2026:
   aufklappbar, alle 17 Galeriebilder geladen. Keine Browserwarnungen/JS-Fehler.
 - Assetversion 20261020-photos-1. Reservierungsversand unverändert deaktiviert;
   keine Reservierungsanfrage oder Mail ausgelöst.
+
+Native Karten nach PDF-Lieferung vom 20.10.2026:
+- MENU.pdf und ALKOL MENU.pdf: je zwei Bildseiten. Vollständig manuell übertragen.
+- Unabhängiger visueller Abgleich: 126/126 Positionen und Preise korrekt;
+  35 artikelbezogene, zwei kategorienbezogene Kennzeichnungen und Legenden geprüft.
+- Eine Transkriptionskorrektur: Pastirma bei Studio’s Plate.
+- 22 Kategorien: 39 Speisen/Bar-Snacks, 87 Getränke. Keine Mengen ergänzt.
+- Native statische HTML-Karte mit aufklappbaren Kategorien, JS-Kartenwechsel,
+  DE/EN/TR-Bedienung, originalsprachlichen deutschen Inhaltsangaben.
+- Eigene PDF-Downloads: 4/4 gerenderte Seiten pixelgleich nach Metadatenentfernung.
+- 22/22 Mock-Tests und Build bestanden; 126 HTML-Preiszeilen, lokale Pfade geprüft.
+- Browser 1280/390/320 px ohne Überlauf; Speisen/Getränke, Kategorien, Weinpreise
+  und Sprachwechsel geprüft. Home-/Reservierungslinks behalten Sprachwahl.
+- Bekannte Widersprüche in Allergenkennzeichnungen mit sichtbarem Hinweis;
+  endgültige Betreiberprüfung offen. Keine Allergene eigenmächtig korrigiert.
+- Reservierungsversand unverändert; keine Anfrage oder E-Mail ausgelöst.

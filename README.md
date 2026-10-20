@@ -11,6 +11,7 @@ Das Reservierungsformular ist direkt in die Website eingebaut. Der AJAX-Versand 
 - Eigene Studio-B-Fotos, Studio-B-Schriftzug und warme dunkle Farbwelt. Die am 20.10.2026 gelieferten Fotos ergänzen Hero, Açaí-Bereich und eine aufklappbare Galerie.
 - Ergänzt: Tag-/Abendbereiche, Kontakt, Telefon, Formular und mobile Reservierungsnavigation.
 - Deutsch, Englisch und Türkisch; keine externen Fonts oder Analytics.
+- Eigene Speise- und Getränkekarte unter `speisekarte.html`: 126 Positionen mit Preisen in 22 Kategorien. Die Bedienung ist dreisprachig; Namen, Beschreibungen und Kennzeichnungen bleiben originalsprachlich Deutsch.
 - Versandadapter und Prüfungen in `formsubmit-service.js` und `tests/formsubmit.test.mjs`.
 - Neue QR-Dateien in `print/`; Ziel ist der Abschnitt `#reservieren` auf studiob.bar.
 - `arch.html`, `split.html` und das dafür verwendete `styles.css` sind unverändert.
@@ -59,8 +60,23 @@ Die ursprüngliche Anweisung, studiob.bar nicht zu verwenden, wurde am 20. Oktob
 
 ## Bilder und Inhalte
 
-`assets/street.jpg`, `bar.jpg`, `wall.jpg`, `door.jpg` stammen unverändert aus dem bestehenden Repository. `assets/acai.jpeg` ist das zuvor vom Nutzer freigegebene Studio-B-Foto aus der lokalen September-Vorschau. Die Lieferung vom 20.10.2026 enthält 19 unterschiedliche Motive und fünf zusätzliche Kopien mit identischen Bildpixeln. `assets/food/` enthält responsive WebP-Versionen ohne Kamerametadaten, zusätzlich ein JPEG für Linkvorschauen. Originaldateien bleiben außerhalb des öffentlichen Repositorys erhalten. Quelle, Abmessungen und Dateigrößen stehen in `docs/photo-assets-2026-10-20.json`. Die Datei `THE SCHNITZEL` zeigt Pasta und ist deshalb neutral als „Pasta“ beschriftet; Zutaten und Preise werden daraus nicht abgeleitet. Sechs Galeriebilder erscheinen direkt, elf weitere in einem auch ohne JavaScript bedienbaren Aufklappbereich.
+`assets/street.jpg`, `bar.jpg`, `wall.jpg`, `door.jpg` stammen unverändert aus dem bestehenden Repository. `assets/acai.jpeg` ist das zuvor vom Nutzer freigegebene Studio-B-Foto aus der lokalen September-Vorschau. Die Lieferung vom 20.10.2026 enthält 19 unterschiedliche Motive und fünf zusätzliche Kopien mit identischen Bildpixeln. `assets/food/` enthält responsive WebP-Versionen ohne Kamerametadaten, zusätzlich ein JPEG für Linkvorschauen. Originaldateien bleiben außerhalb des öffentlichen Repositorys erhalten. Quelle, Abmessungen und Dateigrößen stehen in `docs/photo-assets-2026-10-20.json`. Die später gelieferte Speisekarte bestätigt „The Schnitzel“ als Hähnchenschnitzel mit Nudeln in Käsesahnesauce; die zunächst neutrale Bildunterschrift wurde entsprechend aktualisiert. Sechs Galeriebilder erscheinen direkt, elf weitere in einem auch ohne JavaScript bedienbaren Aufklappbereich.
 
 Frühstück 09–16 Uhr, Lunch 11–20 Uhr, 16 Außenplätze und Zahlarten stammen aus Betreiberangaben im Chat. Telefonnummer: 030 67392575. Es werden keine wechselnden Angebote, Preise, Gästezahlen oder Testimonials erfunden.
 
 Schriften der bestehenden Seite sind nun lokal eingebunden. Lizenzen liegen unter `assets/fonts/`. Papillon dient als Gestaltungsreferenz für großflächige Bildführung und klare Reservierung; kein fremdes Bildmaterial und keine übernommenen Texte.
+
+## Speise- und Getränkekarte
+
+Die am 20.10.2026 bereitgestellten PDFs `MENU.pdf` und `ALKOL MENU.pdf` sind die Quelle. Beide enthalten ausschließlich Bildseiten. Die Inhalte wurden manuell übertragen und in einem zweiten, unabhängigen Durchgang vollständig mit allen vier Seiten abgeglichen.
+
+- `data/menu-food-source.json`: 64 Positionen, einschließlich Kaffee, alkoholfreier Getränke und Dessert.
+- `data/menu-drinks-source.json`: 62 Positionen, einschließlich vier Bar-Snacks.
+- Die Website ordnet 39 Einträge Speisen und 87 Einträge Getränken zu. Frühstück/Lunch/Bar-Snacks bleiben in getrennten Kategorien; keine zusätzlichen Verfügbarkeitszeiten oder Füllmengen erfunden.
+- `scripts/menu-page.html` ist die Seitenvorlage; `scripts/render-menu.mjs` erzeugt daraus `speisekarte.html` mit statischem HTML. Native Aufklappbereiche funktionieren auch ohne JavaScript. Ohne JavaScript erscheinen beide Karten untereinander; mit JavaScript wechseln die Navigationslinks zwischen Speisen und Getränken.
+- `menu.js` übernimmt den Karten- und Sprachwechsel; `menu.css` die Darstellung. Originaltexte sind mit `lang="de"` gekennzeichnet.
+- `assets/menus/` enthält beide PDFs als zusätzliche Downloads. Dokumentmetadaten wurden entfernt; die vier gerenderten Seiten sind pixelgleich mit den gelieferten Originalen. Die PDFs laden erst beim Öffnen oder Herunterladen.
+
+Nach einer Kartenänderung die Quelldaten aktualisieren und `npm run render:menu` oder `npm run build` ausführen. Das erzeugte `speisekarte.html` mitcommitten, da GitHub Pages direkt aus dem Repository-Root veröffentlicht. Build bricht bei fehlenden Preisen oder doppelten Kategorien ab. Versionsparameter in Startseite, Karten-Vorlage und JS-Modulen konsistent erhöhen.
+
+**Offene inhaltliche Prüfung durch das Team:** Die gelieferten Allergencodes sind widersprüchlich bzw. möglicherweise unvollständig, z. B. Eier bei „Vegan Lover“ und kein Milchcode bei „Classic“ trotz Frischkäse. Die Quellenkennzeichnungen werden unverändert übernommen, mit einem stets sichtbaren Hinweis vor der Allergenlegende. Fehlende Kennzeichnungen werden ausdrücklich nicht als Allergenfreiheit dargestellt. Keine Codes aus Zutaten abgeleitet. Bitte verbindlich vom Betreiber korrigieren lassen und anschließend beide Originalkarten und die JSON-Quelldaten aktualisieren. Weitere Quellenhinweise stehen in den jeweiligen JSON-Dateien unter `notes`.

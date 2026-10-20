@@ -1,0 +1,385 @@
+{
+  "source": "ALKOL MENU.pdf",
+  "sections": [
+    {
+      "id": "signature",
+      "title": "Signature Cocktails",
+      "group": "drinks",
+      "page": 1,
+      "items": [
+        {
+          "name": "Green Flag (Kuzu Kulagi)",
+          "description": "Gin, Holunderblütenlikör, grüner Apfel, Sauerampfer, Basilikum",
+          "price": "13,00"
+        },
+        {
+          "name": "Hot & Toxic",
+          "description": "Blanco Tequila, Passionsfrucht, frische Limette, Chili",
+          "price": "13,00"
+        },
+        {
+          "name": "Dark Psychology (with Whisky Smoker)",
+          "description": "Whiskey, Kirschlikör, Ahornsirup, Angustura",
+          "price": "15,00"
+        },
+        {
+          "name": "Love Bombing",
+          "description": "Vanille-Wodka, Himbeerlikör, Vanille, frische Zitrone",
+          "price": "13,00"
+        },
+        {
+          "name": "Red Flag",
+          "description": "Gin, Erdbeere, Basilikum, frische Zitrone",
+          "price": "13,00"
+        },
+        {
+          "name": "Bread Crumbing",
+          "description": "Gin, Maracuja, Vanille, frische Zitrone",
+          "price": "13,00"
+        }
+      ]
+    },
+    {
+      "id": "sours",
+      "title": "Sours",
+      "group": "drinks",
+      "page": 1,
+      "items": [
+        {
+          "name": "Whisky Sour",
+          "description": "Whiskey, Zitronensaft, Zuckersirup",
+          "price": "12,00"
+        },
+        {
+          "name": "New York Sour",
+          "description": "Whiskey, Zitronensaft, Zuckersirup, Rotwein-Float",
+          "price": "12,00"
+        },
+        {
+          "name": "Aperol Sour",
+          "description": "Aperol, Limette, Zitronensaft, Zuckersirup",
+          "price": "11,00"
+        },
+        {
+          "name": "Hemingway Sour",
+          "description": "Gin, Limette, Grenadine, Maracuja",
+          "price": "11,00"
+        }
+      ]
+    },
+    {
+      "id": "classics",
+      "title": "Classics",
+      "group": "drinks",
+      "page": 1,
+      "items": [
+        {
+          "name": "Gin Basil Smash",
+          "description": "Gin, frisches Basilikum, Zitronensaft, Zuckersirup",
+          "price": "12,00"
+        },
+        {
+          "name": "Gin Fizz",
+          "description": "Gin, Zitronensaft, Zuckersirup, Soda",
+          "price": "10,00"
+        },
+        {
+          "name": "Negroni",
+          "description": "Gin, Campari, roter Wermut",
+          "price": "10,00"
+        },
+        {
+          "name": "Espresso Martini",
+          "description": "Wodka, Espresso, Kaffeelikör, Zuckersirup",
+          "price": "11,00"
+        },
+        {
+          "name": "Mojito",
+          "description": "Weißer Rum, Limette, Minze, Rohrzucker, Soda",
+          "price": "10,00"
+        },
+        {
+          "name": "Lillet Wild Berry",
+          "description": "Lillet Blanc, Wild-Berry-Limonade, Beeren",
+          "price": "10,00"
+        },
+        {
+          "name": "Wodka Russin Wild Berry",
+          "description": "Wodka, Wild-Berry-Limonade, Beeren",
+          "price": "10,00"
+        },
+        {
+          "name": "Moscow Mule",
+          "description": "Wodka, Ginger Beer, Limettensaft",
+          "price": "11,00"
+        },
+        {
+          "name": "Cosmopolitan",
+          "description": "Wodka, Tripple Sec, Limette, Cranberry",
+          "price": "10,00"
+        }
+      ]
+    },
+    {
+      "id": "longdrinks",
+      "title": "Longdrinks",
+      "group": "drinks",
+      "page": 1,
+      "items": [
+        {
+          "name": "Gin Tonic",
+          "price": "10,00"
+        },
+        {
+          "name": "Vodka Lemon",
+          "price": "10,00"
+        },
+        {
+          "name": "Skinny Bitch",
+          "price": "10,00"
+        },
+        {
+          "name": "Vodka Energy",
+          "price": "10,00"
+        },
+        {
+          "name": "Cuba Libre",
+          "price": "10,00"
+        },
+        {
+          "name": "Whiskey Cola",
+          "price": "10,00"
+        },
+        {
+          "name": "Aperol Spritz",
+          "price": "7,00"
+        },
+        {
+          "name": "Hugo",
+          "price": "7,00"
+        }
+      ]
+    },
+    {
+      "id": "shaker",
+      "title": "Shaker",
+      "group": "drinks",
+      "page": 1,
+      "note": "Ganzer Shaker, serviert mit Shotgläsern.",
+      "items": [
+        {
+          "name": "Sex on the Beach",
+          "description": "Wodka, Pfirsichlikör, Cranberrysaft, Orangensaft",
+          "price": "16,00"
+        },
+        {
+          "name": "Espresso Martini",
+          "description": "Wodka, Espresso, Kaffeelikör, Zuckersirup",
+          "price": "18,00"
+        }
+      ]
+    },
+    {
+      "id": "alcohol-free-cocktails",
+      "title": "Drivers License / Alkoholfrei",
+      "group": "drinks",
+      "page": 1,
+      "items": [
+        {
+          "name": "Lime and Rosmarin",
+          "description": "Limette, Zucker, Rosmarin, Ginger Ale",
+          "price": "8,00"
+        },
+        {
+          "name": "Lemon and Basil",
+          "description": "Zitrone, Basilikum, Zucker, Soda",
+          "price": "8,00"
+        }
+      ]
+    },
+    {
+      "id": "wine-champagne",
+      "title": "Rotwein / Weißwein / Rosé / Champagner",
+      "group": "drinks",
+      "page": 2,
+      "note": "Weine: Glas / Flasche. Champagner: Flasche.",
+      "items": [
+        {
+          "name": "Cabernet Sauvignon",
+          "price": "7,50 / 24,00"
+        },
+        {
+          "name": "Sauvignon Blanc",
+          "price": "7,50 / 24,00"
+        },
+        {
+          "name": "Rosé",
+          "price": "7,50 / 24,00"
+        },
+        {
+          "name": "Rioja",
+          "price": "7,50 / 24,00"
+        },
+        {
+          "name": "Grauburgunder",
+          "price": "7,50 / 24,00"
+        },
+        {
+          "name": "Moet & Chandon Ice",
+          "price": "150,00"
+        }
+      ]
+    },
+    {
+      "id": "whiskey",
+      "title": "Whiskey",
+      "group": "drinks",
+      "page": 2,
+      "items": [
+        {
+          "name": "Jack Daniel’s",
+          "price": "6,00"
+        },
+        {
+          "name": "Gentleman Jack",
+          "price": "8,00"
+        },
+        {
+          "name": "Jameson",
+          "price": "7,00"
+        },
+        {
+          "name": "Jhonny Walker Black Label",
+          "price": "9,00"
+        },
+        {
+          "name": "Dimple",
+          "price": "8,00"
+        },
+        {
+          "name": "Chivas Regal 12Y",
+          "price": "8,00"
+        },
+        {
+          "name": "Chivas Regal 18Y",
+          "price": "12,00"
+        }
+      ]
+    },
+    {
+      "id": "beer",
+      "title": "Beer",
+      "group": "drinks",
+      "page": 2,
+      "items": [
+        {
+          "name": "BRLO Helles",
+          "price": "5,00"
+        },
+        {
+          "name": "Augustiner",
+          "price": "5,00"
+        },
+        {
+          "name": "Carlsberg",
+          "price": "4,00"
+        },
+        {
+          "name": "Hefeweizen",
+          "price": "5,00"
+        },
+        {
+          "name": "BRLO Naked Non-Alkoholic IPA",
+          "price": "4,00"
+        }
+      ]
+    },
+    {
+      "id": "shots",
+      "title": "Shots",
+      "group": "drinks",
+      "page": 2,
+      "items": [
+        {
+          "name": "Berliner Luft",
+          "price": "3,00"
+        },
+        {
+          "name": "Mexicaner",
+          "price": "4,00"
+        },
+        {
+          "name": "Kamikaze",
+          "price": "4,00"
+        },
+        {
+          "name": "Die Pille davor",
+          "price": "4,00"
+        },
+        {
+          "name": "Jägermeister",
+          "price": "3,00"
+        },
+        {
+          "name": "Tequila W/G",
+          "price": "4,00"
+        },
+        {
+          "name": "Vodka",
+          "price": "3,00"
+        }
+      ]
+    },
+    {
+      "id": "frozen",
+      "title": "Frozen",
+      "group": "drinks",
+      "page": 2,
+      "items": [
+        {
+          "name": "Frozen Strawberry Daiquiri",
+          "description": "Weißer Rum, frischer Limettensaft, Zuckersirup, Erdbeeren",
+          "price": "10,00"
+        },
+        {
+          "name": "Frozen Margarita",
+          "description": "Tequila Blanco, Triple Sec, frischer Limettensaft, Agavensirup",
+          "price": "10,00"
+        }
+      ]
+    },
+    {
+      "id": "bar-snacks",
+      "title": "Snacks",
+      "group": "food",
+      "page": 2,
+      "items": [
+        {
+          "name": "Käseplatte",
+          "description": "Auswahl verschiedener Käsesorten, serviert mit unserem Hausbrot",
+          "price": "10,00"
+        },
+        {
+          "name": "Olivenvariation",
+          "description": "Feine Auswahl verschiedener Oliven, serviert mit unserem Hausbrot",
+          "price": "5,00"
+        },
+        {
+          "name": "Nussmischung",
+          "description": "Auswahl gerösteter Nüsse",
+          "price": "6,00"
+        },
+        {
+          "name": "Nachos",
+          "description": "Mit Käse überbacken, Salsa- und Käse-Dip, Jalapenos",
+          "price": "10,00"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Alle 62 Positionen aus beiden PDF-Seiten visuell geprüft. Groß-/Kleinschreibung und Interpunktion für die Webdarstellung vereinheitlicht; auffällige Quellschreibweisen bei Produktnamen beibehalten.",
+    "Die Vorlage nennt keine Füllmengen und enthält keine sichtbare Allergenkennzeichnung. Keine Mengen oder Allergenangaben ergänzt.",
+    "Die Symbole über den Weinpreisen kennzeichnen Glas und Flasche. Moet & Chandon Ice steht mit 150 in der Flaschenspalte."
+  ]
+}
