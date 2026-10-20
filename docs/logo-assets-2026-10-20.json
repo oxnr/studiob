@@ -1,0 +1,80 @@
+{
+  "source_filename": "STUDIO B.pdf",
+  "source_sha256": "7fb1701e3f8216378620b5fee3b755d007a51b40ffb1e8b7eae4e8327108894c",
+  "date": "2026-10-20",
+  "conversion": "pdftocairo -svg; original black vector paths preserved without redesign",
+  "background": "transparent; PDF implicit page background not exported; no artwork removed",
+  "assets": [
+    {
+      "file": "assets/brand/logo-full.svg",
+      "artwork_bounds_xyxy": [
+        49.371125,
+        459.319883,
+        1030.491061,
+        620.679286
+      ],
+      "viewbox_xywh": [
+        45.371125,
+        455.319883,
+        989.119936,
+        169.359404
+      ],
+      "padding_source_units": 4,
+      "bytes": 23532,
+      "composition": "all original artwork",
+      "sha256": "09f634293358a9d3fa6cc1f11ac55a332d03fc45e1a99477c65a26e9bfce3624"
+    },
+    {
+      "file": "assets/brand/logo-mark.svg",
+      "artwork_bounds_xyxy": [
+        375.410739,
+        459.319883,
+        739.475623,
+        620.679286
+      ],
+      "viewbox_xywh": [
+        371.410739,
+        455.319883,
+        372.064884,
+        169.359404
+      ],
+      "padding_source_units": 4,
+      "bytes": 8913,
+      "composition": "original Studio script, B and open circle",
+      "sha256": "186ed6790e28c4279f0d38afe0a5c200e615237458631a01602aefab520b5b12"
+    },
+    {
+      "file": "assets/brand/favicon.svg",
+      "artwork_bounds_xyxy": [
+        600.049378,
+        459.319883,
+        739.475623,
+        620.679286
+      ],
+      "viewbox_xywh": [
+        580.082798,
+        450.319883,
+        179.359404,
+        179.359404
+      ],
+      "padding_source_units": 9,
+      "bytes": 2530,
+      "composition": "original B and open circle; separate complete vector paths; no Studio strokes clipped",
+      "sha256": "e3efb2d130c4cb212a6af5dfeb41537ff3ba2fb9e1f144b260e7cd29fb91412c"
+    }
+  ],
+  "verification": {
+    "xml_parsed": true,
+    "embedded_raster_images": 0,
+    "external_references": 0,
+    "scripts": 0,
+    "notes": "All source geometry is preserved. The favicon isolates two independently complete source paths; it does not clip other strokes.",
+    "visual_inspection": "All three variants rendered from their exact SVG path geometry via ReportLab/PDFium and inspected at 1600x274, 1117x509 and 539x539. All original artwork retained in each declared composition; no clipped strokes. Browser rendering is checked separately during website integration.",
+    "render_files_private_output": [
+      "logo-full-verified.png",
+      "logo-mark-verified.png",
+      "favicon-verified.png"
+    ],
+    "renderer_note": "macOS Quick Look SVG thumbnails were disregarded because its square thumbnail canvas clipped otherwise valid artwork."
+  }
+}

@@ -8,7 +8,7 @@ Stand: 20. Oktober 2026. Eigener Branch `codex/studio-b-reservations`.
 Produktive Version für GitHub Pages (`main`, Repository-Root, Domain `studiob.bar`).
 Das Reservierungsformular ist direkt in die Website eingebaut. Der AJAX-Versand über FormSubmit an das Studio-B-Gmail-Postfach ist vorbereitet; Gäste bleiben auf studiob.bar. Keine Weiterleitung zum alten Buchungssystem. Bis zur E-Mail-Aktivierung und Verbindung des anonymen Formular-Endpunkts ist der Versand über `reservationEnabled: false` gesperrt, mit telefonischer Alternative. Die Empfängeradresse steht nicht im öffentlichen Code.
 
-- Eigene Studio-B-Fotos, Studio-B-Schriftzug und warme dunkle Farbwelt. Die am 20.10.2026 gelieferten Fotos ergänzen Hero, Açaí-Bereich und eine aufklappbare Galerie.
+- Eigene Studio-B-Fotos, das originale Vektorlogo aus der gelieferten `STUDIO B.pdf` und warme dunkle Farbwelt. Die am 20.10.2026 gelieferten Fotos ergänzen Hero, Açaí-Bereich und eine aufklappbare Galerie.
 - Ergänzt: Tag-/Abendbereiche, Kontakt, Telefon, Formular und mobile Reservierungsnavigation.
 - Deutsch, Englisch und Türkisch; keine externen Fonts oder Analytics.
 - Eigene Speise- und Getränkekarte unter `speisekarte.html`: 126 Positionen mit Preisen in 22 Kategorien. Die Bedienung ist dreisprachig; Namen, Beschreibungen und Kennzeichnungen bleiben originalsprachlich Deutsch.
@@ -80,3 +80,7 @@ Die am 20.10.2026 bereitgestellten PDFs `MENU.pdf` und `ALKOL MENU.pdf` sind die
 Nach einer Kartenänderung die Quelldaten aktualisieren und `npm run render:menu` oder `npm run build` ausführen. Das erzeugte `speisekarte.html` mitcommitten, da GitHub Pages direkt aus dem Repository-Root veröffentlicht. Build bricht bei fehlenden Preisen oder doppelten Kategorien ab. Versionsparameter in Startseite, Karten-Vorlage und JS-Modulen konsistent erhöhen.
 
 **Offene inhaltliche Prüfung durch das Team:** Die gelieferten Allergencodes sind widersprüchlich bzw. möglicherweise unvollständig, z. B. Eier bei „Vegan Lover“ und kein Milchcode bei „Classic“ trotz Frischkäse. Die Quellenkennzeichnungen werden unverändert übernommen, mit einem stets sichtbaren Hinweis vor der Allergenlegende. Fehlende Kennzeichnungen werden ausdrücklich nicht als Allergenfreiheit dargestellt. Keine Codes aus Zutaten abgeleitet. Bitte verbindlich vom Betreiber korrigieren lassen und anschließend beide Originalkarten und die JSON-Quelldaten aktualisieren. Weitere Quellenhinweise stehen in den jeweiligen JSON-Dateien unter `notes`.
+
+## Logo
+
+`assets/brand/` enthält die unveränderten schwarzen Vektorpfade aus der am 20.10.2026 gelieferten `STUDIO B.pdf`, ohne den leeren Seitenrand. `logo-mark.svg` zeigt Studio B mit Kreis im Kopf beider Seiten; `logo-full.svg` ergänzt die beiden Begleitzeilen im Abschluss der Startseite und wird dort per CSS weiß dargestellt. `favicon.svg` verwendet die vollständigen, separat vorhandenen B- und Kreispfade. Keine eingebetteten Schriften, Rasterbilder oder externen Verweise. Herkunft, Zuschnitt und Prüfsummen: `docs/logo-assets-2026-10-20.json`. Die Original-PDF bleibt außerhalb des öffentlichen Repositorys erhalten.

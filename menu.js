@@ -1,4 +1,4 @@
-import { translations } from './translations.js?v=20261020-menu-1';
+import { translations } from './translations.js?v=20261020-logo-1';
 
 const languages = ['de','en','tr'];
 const requestedLanguage = new URL(location.href).searchParams.get('lang');

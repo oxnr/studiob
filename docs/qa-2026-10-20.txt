@@ -109,3 +109,16 @@ Native Karten nach PDF-Lieferung vom 20.10.2026:
 - Bekannte Widersprüche in Allergenkennzeichnungen mit sichtbarem Hinweis;
   endgültige Betreiberprüfung offen. Keine Allergene eigenmächtig korrigiert.
 - Reservierungsversand unverändert; keine Anfrage oder E-Mail ausgelöst.
+
+Logo aus STUDIO B.pdf vom 20.10.2026:
+- Originale Vektorpfade als drei transparente SVGs: vollständiges Logo,
+  zentraler Schriftzug und originales B mit Kreis als Favicon.
+- Header auf Startseite und nativer Speisekarte ersetzt; vollständiges Logo
+  im dunklen Seitenabschluss per CSS weiß dargestellt. Original-PDF unverändert.
+- SVGs ohne Scripts, Rasterbilder oder externe Verweise; Herkunft und SHA256
+  in logo-assets-2026-10-20.json.
+- Build, 22/22 bestehende Tests und Diffcheck bestanden.
+- Browser: Startseite bei 1280/390 px, Speisekarte bei 320 px geprüft;
+  Logos vollständig geladen, keine abgeschnittenen Linien, kein Überlauf,
+  keine Browserwarnungen oder Skriptfehler.
+- Assetversion 20261020-logo-1. Reservierungscode und Kartendaten unverändert.
