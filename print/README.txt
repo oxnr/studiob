@@ -1,14 +1,13 @@
-STUDIO B · QR-ENTWÜRFE — NOCH NICHT ZUM DRUCK FREIGEGEBEN
+STUDIO B · QR-DATEIEN
 Stand: 20. Oktober 2026
 
-DRUCKSPERRE / VORAUSSETZUNG
-Die neue Website und ihr Formular sind noch nicht auf studiob.bar veröffentlicht.
-Der QR wird erst mit der neuen Website und ihrem Abschnitt id="reservieren"
-nutzbar. Das Ziel wurde für diesen Entwurf angenommen; der Nutzer hat die
-Basisdomain studiob.bar festgelegt, aber das endgültige QR-Ziel noch nicht.
-Erst drucken, wenn das finale Ziel bestätigt, der Abschnitt auf der Live-Domain
-erreichbar und eine Reservierungsanfrage bis zur Betreiber-E-Mail getestet ist.
-Das QR-Decoding unten prüft den Inhalt des Codes, nicht diese Live-Funktion.
+LIVE-ZIEL VOR DEM DRUCK PRÜFEN
+Der Reservierungs-QR führt zu studiob.bar/#reservieren. Der Abschnitt verlinkt
+vorerst das vorhandene Buchungsformular auf studiob030.de in DE, EN oder TR.
+Das neu vorbereitete eigene E-Mail-Formular ist noch nicht aktiviert.
+Vor einer Druckauflage die Live-Domain per Smartphone scannen und den
+Reservierungslink öffnen. Ein eigener E-Mail-Versand wurde noch nicht getestet.
+Das QR-Decoding unten prüft den Inhalt des Codes, nicht die Mailzustellung.
 Die Dateien in studio-b-site-2026-10-20/print/ sind überholte Varianten auf Basis
 von studiob030.de und dürfen nicht als freigegebene neue QR-Dateien benutzt werden.
 
@@ -17,7 +16,7 @@ Reservierung: https://studiob.bar/#reservieren
 Startseite:   https://studiob.bar/
 
 Kein Code führt auf eine private Vorschau. Beide Ziele sind die vom Nutzer jetzt
-vorgegebene Basis studiob.bar. Der Reservierungsanker ist noch eine Annahme.
+vorgegebene Basis studiob.bar. Als Standard wurde der Reservierungsabschnitt gewählt.
 Die Dateien wurden nur lokal erzeugt und nicht als QR-Schilder ausgegeben.
 Ein älterer Projekt-QR vom 6. September wurde zusätzlich dekodiert:
 https://g.page/r/CSzx6gGtoX8lEBM/review

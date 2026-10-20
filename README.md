@@ -5,14 +5,14 @@ Stand: 20. Oktober 2026. Eigener Branch `codex/studio-b-reservations`.
 
 ## Status
 
-Design und Reservierungsformular als private Vorschau. Die produktive GitHub-Pages-Seite wurde noch nicht ersetzt.
-Das Formular sendet ohne aktivierte Konfiguration ausdrücklich **keine** E-Mail. Es zeigt nach Prüfung der Pflichtfelder einen Vorschauhinweis.
+Produktive Version für GitHub Pages (`main`, Repository-Root, Domain `studiob.bar`).
+Reservieren führt vorerst zum bestehenden Formular auf `studiob030.de`, passend zur gewählten Sprache. Dieser Link funktioniert auch ohne JavaScript. Das eigene E-Mail-Formular bleibt verborgen und deaktiviert, solange Endpoint und Turnstile-Sitekey fehlen. Es werden in dieser Version keine Gästedaten auf studiob.bar erfasst.
 
 - Bestehende Fotos, Studio-B-Schriftzug und warme dunkle Farbwelt erhalten.
 - Ergänzt: Tag-/Abendbereiche, Kontakt, Telefon, Formular und mobile Reservierungsnavigation.
 - Deutsch, Englisch und Türkisch; keine externen Fonts oder Analytics.
 - Server-Endpunkt und Mailvorlage in `server/`, mit separater Konfiguration.
-- Neue QR-Dateien in `print/`; Anker `#reservieren` erst nach Veröffentlichung verfügbar.
+- Neue QR-Dateien in `print/`; Ziel ist der Abschnitt `#reservieren` auf studiob.bar.
 - `arch.html`, `split.html` und das dafür verwendete `styles.css` sind unverändert.
 
 ## Lokal
@@ -38,13 +38,17 @@ Gast sendet eine **unverbindliche Anfrage** mit Datum, Uhrzeit, Personen, Name, 
 
 Cloudflare Worker + Resend; Turnstile schützt den öffentlichen Mail-Endpunkt. Einrichtung und Tests: `server/README.md`. Secrets gehören ausschließlich in die serverseitige Umgebung, nie in `site-config.js` oder Git.
 
-Vor der Live-Schaltung fehlen:
+Vor Aktivierung des eigenen E-Mail-Formulars fehlen:
 
 1. Betreiber bestätigt Empfängeradresse. Öffentlich bei der anderen Website: info@studiob030.de; als Ziel noch **nicht** festgelegt.
 2. Versanddienst/Absenderdomain und Turnstile verbinden, Worker veröffentlichen, öffentliche Endpoint-URL und Sitekey in `site-config.js` setzen.
 3. Einen abgestimmten echten Test vom Formular bis zum Betreiber-Postfach durchführen. Bisher nur Mock-Tests, keine Testreservierung an den Betrieb.
 4. Rechtstexte für **studiob.bar**, tatsächlichen Betreiber und die eingesetzten Versand-/Schutzdienste prüfen/ergänzen. Aktuelle Links gehen auf bestehende Betreiberseiten bei studiob030.de und gelten nicht automatisch für die neue Verarbeitung.
-5. Neue Bilder einfügen, finale Inhalte prüfen, `noindex,nofollow` in `index.html` entfernen, erst dann den Branch veröffentlichen.
+Neue Fotos können nachgereicht werden; die veröffentlichte Gestaltung verwendet vorhandene Studio-B-Aufnahmen. Der bestehende externe Buchungsdienst wurde nur auf Erreichbarkeit geprüft, nicht mit einer echten Reservierung.
+
+## Veröffentlichung und Rücknahme
+
+GitHub Pages veröffentlicht `main` aus dem Repository-Root, nicht `dist/`. `CNAME` muss `studiob.bar` enthalten. Vor Push Tests und Build ausführen, danach Pages-Buildstatus sowie Live-Domain, Sprachwechsel und Reservierungslink prüfen. Kein Force-Push. Eine Rücknahme erfolgt durch einen neuen Revert-Commit auf `main`; die vorherige Produktionsversion war `fdcfda08f17b22f87d5aaadea0fbd6962cab5717`.
 
 Die ursprüngliche Anweisung, studiob.bar nicht zu verwenden, wurde am 20. Oktober für diesen Websiteauftrag durch „Nutze unsere Seite studiob.bar als Basis“ ersetzt. Google Ads und Maps wurden dabei nicht geändert.
 

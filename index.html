@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#381b21">
-  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://studiob.bar/">
   <meta name="description" content="Dein Tag. Dein Abend. Dein Studio B. Frühstück, Lunch und Cocktails in Berlin-Kreuzberg. Oranienstraße 168. Tisch online anfragen oder 030 67392575 anrufen.">
   <meta property="og:title" content="Studio B — Gute Tage. Lange Nächte.">
   <meta property="og:description" content="Café, Kitchen & Bar in Berlin-Kreuzberg. Oranienstraße 168.">
@@ -95,14 +95,18 @@
       <div class="reservation-copy">
         <p class="eyebrow" data-i18n="reservationEyebrow">04 / BIS GLEICH IM STUDIO</p>
         <h2><span data-i18n="reservationFirst">Ein Tisch.</span><br><em data-i18n="reservationSecond">Eure Zeit.</em></h2>
-        <p data-i18n="reservationCopy">Sag uns, wann ihr kommen möchtet. Wir erhalten eure Anfrage und melden uns per E-Mail mit der Bestätigung.</p>
+        <p data-i18n="reservationCopy">Frühstück zu zweit oder ein Abend mit Freunden? Frag euren Wunschtermin online an oder ruf uns direkt an.</p>
         <p class="reservation-note" data-i18n="reservationNote">Dein Tisch ist erst nach unserer Zusage reserviert.</p>
         <div class="phone-help"><span data-i18n="phoneHelp">Lieber persönlich? Ruf uns an.</span><a href="tel:+493067392575">030 67392575 ↗</a></div>
       </div>
       <div class="reservation-card">
         <div class="form-header"><span data-i18n="formTitle">DEINE RESERVIERUNGSANFRAGE</span><span aria-hidden="true">↗</span></div>
+        <div id="external-reservation">
+          <p class="booking-intro" data-i18n="bookingIntro">Wähle Datum, Uhrzeit und Personenzahl in unserem Reservierungsformular auf studiob030.de.</p>
+          <a id="booking-link" class="button button-dark" href="https://studiob030.de/reservieren/?mode=night"><span data-i18n="bookingCta">Zum Reservierungsformular</span><span aria-hidden="true">↗</span></a>
+        </div>
         <p class="preview-note" id="preview-note" hidden data-i18n="previewNote">Designvorschau: Hier werden keine Anfragen versendet. Du kannst das Formular ausprobieren.</p>
-        <form id="reservation-form" method="post" action="#reservieren">
+        <form id="reservation-form" method="post" action="#reservieren" hidden>
           <div class="form-row three">
             <label><span data-i18n="guestsLabel">Personen</span><select name="guests" required aria-label="Personen"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option></select></label>
             <label><span data-i18n="dateLabel">Datum</span><input type="date" name="date" required aria-label="Datum"></label>
@@ -120,7 +124,6 @@
           <button class="button button-dark submit" type="submit" disabled><span data-i18n="submit">Tisch unverbindlich anfragen</span><span aria-hidden="true">↗</span></button>
           <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
         </form>
-        <noscript><p>Bitte aktiviere JavaScript oder reserviere telefonisch unter <a href="tel:+493067392575">030 67392575</a>.</p></noscript>
       </div>
     </section>
 

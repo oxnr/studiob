@@ -5,6 +5,12 @@ const form = document.querySelector('#reservation-form');
 const status = document.querySelector('#form-status');
 const submitButton = form.querySelector('[type="submit"]');
 const config = window.STUDIO_B_CONFIG || {};
+const formEnabled = !!(config.reservationEndpoint && config.turnstileSiteKey);
+const bookingUrls = {
+  de: 'https://studiob030.de/reservieren/?mode=night',
+  en: 'https://studiob030.de/en/en-reserve/?mode=night',
+  tr: 'https://studiob030.de/tr/tr-rezervasyon/?mode=night'
+};
 const languages = ['de', 'en', 'tr'];
 const requestedLanguage = new URL(location.href).searchParams.get('lang');
 let language = languages.includes(requestedLanguage) ? requestedLanguage : 'de';
@@ -20,6 +26,7 @@ function t(key) { return translations[language][key] || translations.de[key] || 
 function setLanguage(lang) {
   language = lang;
   document.documentElement.lang = lang;
+  document.querySelector('#booking-link').href = bookingUrls[lang];
   document.querySelectorAll('[data-i18n]').forEach(element => {
     element.textContent = t(element.dataset.i18n);
   });
@@ -95,9 +102,11 @@ function showStatus(message, error = false) {
 }
 
 const preview = !config.reservationEndpoint || location.origin !== 'https://studiob.bar';
-document.querySelector('#preview-note').hidden = !preview;
+form.hidden = !formEnabled;
+document.querySelector('#external-reservation').hidden = formEnabled;
+document.querySelector('#preview-note').hidden = !formEnabled || !preview;
 
-if (!preview && config.turnstileSiteKey) {
+if (formEnabled && !preview) {
   const challenge = document.createElement('div');
   challenge.className = 'challenge';
   submitButton.before(challenge);
@@ -122,7 +131,7 @@ form.addEventListener('input', () => {
 
 form.addEventListener('submit', async event => {
   event.preventDefault();
-  if (submitting || completed) return;
+  if (!formEnabled || submitting || completed) return;
   updateSlots();
   if (!form.reportValidity()) return;
   const values = Object.fromEntries(new FormData(form));
@@ -179,4 +188,4 @@ if ('IntersectionObserver' in window) {
 }
 document.querySelector('#year').textContent = new Date().getFullYear();
 setLanguage(language);
-submitButton.disabled = false;
+submitButton.disabled = !formEnabled;

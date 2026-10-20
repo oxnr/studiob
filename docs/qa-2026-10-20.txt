@@ -1,7 +1,7 @@
 Studio B Redesign QA — 20.10.2026
 Basis: GitHub oxnr/studiob, branch codex/studio-b-reservations.
 
-Geprüft:
+Erste private Vorschau:
 - 14 automatisierte Backend-/Client-Adaptertests bestanden. Alle Requests gemockt.
 - Erfolgs-/Fehlerantworten, Timeouts, fehlende Konfiguration, feste Empfängeradresse,
   Turnstile Host/Action, Requestgröße, Eingaben und Berlin-Zeit geprüft.
@@ -17,7 +17,23 @@ Geprüft:
 
 Nicht geprüft/nicht durchgeführt:
 - Keine Live-E-Mail oder Mailzustellung. Empfänger, Absender und Dienstzugänge fehlen.
-- Keine öffentliche Veröffentlichung auf studiob.bar und kein Ersatz gedruckter QR-Codes.
+- Kein Ersatz gedruckter QR-Codes.
 - Datenschutz/Impressum für neue Domain und Versandverarbeitung noch zu finalisieren.
 - Bar-Öffnungszeiten nicht neu verifiziert; Website zeigt nur bestätigte Frühstück-/Lunchzeiten.
 - Google Ads, Maps, Budget und Profil unverändert.
+
+Produktionsfreigabe nach Nutzerauftrag "deploy new version of website":
+- GitHub Pages: main, Repository-Root, HTTPS, bestehende Domain studiob.bar bestätigt.
+- Vorheriger Remote-main: fdcfda08f17b22f87d5aaadea0fbd6962cab5717.
+- Sichtbares Formular durch Link zum vorhandenen Buchungssystem ersetzt.
+- DE/EN/TR-Ziele im Browser geöffnet: jeweils Reservierungsformular sichtbar.
+- Eigene Formularfelder verborgen, Submit deaktiviert; auch ohne JavaScript
+  bleibt der deutsche Buchungslink direkt im HTML nutzbar.
+- Browser Desktop und 390px: Buchungskarte sichtbar; alle drei Sprachen ohne
+  horizontalen Überlauf, passende Buchungs-URLs, keine Warnungen/JS-Fehler.
+- 14/14 Tests, Build und git diff --check erneut erfolgreich.
+- noindex entfernt; kanonische URL https://studiob.bar/ gesetzt.
+- Öffentlicher Payload zusätzlich auf Geheimnisse und echte Gästedaten geprüft:
+  keine gefunden; Bilddateien ohne EXIF/GPS.
+- Kein Versand und keine Buchung ausgelöst. Neue eigene E-Mail-Funktion bleibt
+  unkonfiguriert und inaktiv. Live-Deployment wird separat im lokalen Audit bestätigt.
