@@ -2,11 +2,12 @@ STUDIO B · QR-DATEIEN
 Stand: 20. Oktober 2026
 
 LIVE-ZIEL VOR DEM DRUCK PRÜFEN
-Der Reservierungs-QR führt zu studiob.bar/#reservieren. Der Abschnitt verlinkt
-vorerst das vorhandene Buchungsformular auf studiob030.de in DE, EN oder TR.
-Das neu vorbereitete eigene E-Mail-Formular ist noch nicht aktiviert.
+Der Reservierungs-QR führt zum nativen Formular auf studiob.bar/#reservieren.
+Die Formularsprache ist DE, EN oder TR; keine Weiterleitung zum alten System.
+Der E-Mail-Versand benötigt die einmalige FormSubmit-Aktivierung im Studio-B-
+Gmail-Postfach und anschließend die Freischaltung in site-config.js.
 Vor einer Druckauflage die Live-Domain per Smartphone scannen und den
-Reservierungslink öffnen. Ein eigener E-Mail-Versand wurde noch nicht getestet.
+Formular öffnen. Postfacheingang vor einer größeren Druckauflage prüfen.
 Das QR-Decoding unten prüft den Inhalt des Codes, nicht die Mailzustellung.
 Die Dateien in studio-b-site-2026-10-20/print/ sind überholte Varianten auf Basis
 von studiob030.de und dürfen nicht als freigegebene neue QR-Dateien benutzt werden.

@@ -1,5 +1,9 @@
 # Studio B: Reservierungsanfragen per E-Mail
 
+Hinweis zur aktuellen Website: Dieser Worker ist eine ungenutzte Alternative.
+Die aktive Implementierung verwendet gemäß Nutzerwunsch den einfachen
+FormSubmit-AJAX-Adapter und das Studio-B-Gmail-Postfach; siehe `../README.md`.
+
 Stand: 20. Oktober 2026. Produktionsvorbereiteter Worker für die statische
 Website `https://studiob.bar`. Noch nicht bereitgestellt, keine Zugangsdaten
 hinterlegt und keine E-Mail versandt. Das alte WordPress-System wird nicht

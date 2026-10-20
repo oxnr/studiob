@@ -1,23 +1,17 @@
 import { translations } from './translations.js';
-import { submitReservation } from './reservation-service.js';
+import { submitReservation } from './formsubmit-service.js';
 
 const form = document.querySelector('#reservation-form');
 const status = document.querySelector('#form-status');
 const submitButton = form.querySelector('[type="submit"]');
 const config = window.STUDIO_B_CONFIG || {};
-const formEnabled = !!(config.reservationEndpoint && config.turnstileSiteKey);
-const bookingUrls = {
-  de: 'https://studiob030.de/reservieren/?mode=night',
-  en: 'https://studiob030.de/en/en-reserve/?mode=night',
-  tr: 'https://studiob030.de/tr/tr-rezervasyon/?mode=night'
-};
+const preview = location.origin !== 'https://studiob.bar';
+const formEnabled = preview || (config.reservationEnabled === true && !!config.reservationEndpoint);
 const languages = ['de', 'en', 'tr'];
 const requestedLanguage = new URL(location.href).searchParams.get('lang');
 let language = languages.includes(requestedLanguage) ? requestedLanguage : 'de';
 let submitting = false;
 let completed = false;
-let challengeToken = '';
-let challengeId;
 let lastPayload = '';
 let requestId = '';
 
@@ -26,7 +20,6 @@ function t(key) { return translations[language][key] || translations.de[key] || 
 function setLanguage(lang) {
   language = lang;
   document.documentElement.lang = lang;
-  document.querySelector('#booking-link').href = bookingUrls[lang];
   document.querySelectorAll('[data-i18n]').forEach(element => {
     element.textContent = t(element.dataset.i18n);
   });
@@ -101,29 +94,8 @@ function showStatus(message, error = false) {
   status.scrollIntoView({block:'nearest',behavior:'smooth'});
 }
 
-const preview = !config.reservationEndpoint || location.origin !== 'https://studiob.bar';
-form.hidden = !formEnabled;
-document.querySelector('#external-reservation').hidden = formEnabled;
-document.querySelector('#preview-note').hidden = !formEnabled || !preview;
-
-if (formEnabled && !preview) {
-  const challenge = document.createElement('div');
-  challenge.className = 'challenge';
-  submitButton.before(challenge);
-  const script = document.createElement('script');
-  script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-  script.async = true;
-  script.onload = () => {
-    challengeId = window.turnstile.render(challenge, {
-      sitekey: config.turnstileSiteKey, action:'reservation', theme:'light',
-      callback: token => { challengeToken = token; },
-      'expired-callback': () => { challengeToken = ''; },
-      'error-callback': () => { challengeToken = ''; }
-    });
-  };
-  script.onerror = () => showStatus(t('challengeFailed'),true);
-  document.head.append(script);
-}
+document.querySelector('#preview-note').hidden = !preview;
+document.querySelector('#reservation-unavailable').hidden = formEnabled;
 
 form.addEventListener('input', () => {
   if (!submitting && !completed) status.hidden = true;
@@ -142,7 +114,6 @@ form.addEventListener('submit', async event => {
   values.language = language;
   if (values.name.length < 2) return showStatus(t('invalidName'),true);
   if (!/^\+?[\d\s().-]{7,30}$/.test(values.phone) || !/^\d{7,15}$/.test(values.phone.replace(/\D/g,''))) return showStatus(t('invalidPhone'),true);
-  if (!preview && !challengeToken) return showStatus(t('challengeRequired'),true);
 
   const payload = JSON.stringify(values);
   if (lastPayload !== payload || !requestId) {
@@ -150,7 +121,6 @@ form.addEventListener('submit', async event => {
     lastPayload = payload;
   }
   values.requestId = requestId;
-  values.turnstileToken = challengeToken;
   delete values.privacy;
   submitting = true;
   submitButton.disabled = true;
@@ -162,7 +132,7 @@ form.addEventListener('submit', async event => {
       showStatus(t('previewSuccess'));
     } else if (result.success === true) {
       completed = true;
-      showStatus(t('sent'));
+      showStatus(result.message || t('sent'));
       form.querySelectorAll('input, select, textarea').forEach(input => { input.disabled = true; });
       // No analytics event is emitted without a separately approved measurement setup.
     } else {
@@ -175,8 +145,6 @@ form.addEventListener('submit', async event => {
     submitting = false;
     submitButton.disabled = completed;
     submitButton.querySelector('[data-i18n]').textContent = completed ? t('sentShort') : t('submit');
-    challengeToken = '';
-    if (challengeId !== undefined && window.turnstile) window.turnstile.reset(challengeId);
   }
 });
 
@@ -189,3 +157,4 @@ if ('IntersectionObserver' in window) {
 document.querySelector('#year').textContent = new Date().getFullYear();
 setLanguage(language);
 submitButton.disabled = !formEnabled;
+if (!formEnabled) form.querySelectorAll('input, select, textarea').forEach(input => { input.disabled = true; });

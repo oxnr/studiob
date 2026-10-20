@@ -37,3 +37,29 @@ Produktionsfreigabe nach Nutzerauftrag "deploy new version of website":
   keine gefunden; Bilddateien ohne EXIF/GPS.
 - Kein Versand und keine Buchung ausgelöst. Neue eigene E-Mail-Funktion bleibt
   unkonfiguriert und inaktiv. Live-Deployment wird separat im lokalen Audit bestätigt.
+
+Nachtrag: nativer Versand gemäß anschließendem Nutzerauftrag
+- Nutzer wünscht ausdrücklich Formular in studiob.bar und Versand an Studio-B-Gmail.
+- Ziel ist das bekannte Studio-B-Gmail-Postfach aus der bestehenden Übergabe.
+- FormSubmit-AJAX statt Weiterleitung; sämtliche alten Reservierungslinks entfernt.
+- Ein ausdrücklich als Einrichtungstest / KEINE Reservierung gekennzeichneter
+  Request ohne Gästedaten wurde an den Anbieter gesendet.
+- Anbieterantwort: success:"false", "This form needs Activation", Aktivierungs-Mail
+  mit "Activate Form" laut Anbieter ausgelöst. Noch kein erfolgreicher Mailnachweis.
+- Versand bleibt in site-config.js deaktiviert bis Aktivierung und Live-Test.
+- 22/22 Mock-Tests bestanden, davon acht für den neuen FormSubmit-Adapter:
+  feste Zieladresse, Aktivierungsantworten, Feldgrenzen, Datum/Berlin-Zeit,
+  unklare Antworten und Timeout ohne automatische Wiederholung.
+- Erfolgsantwort-Text ist noch mit dem aktivierten Dienst abzugleichen;
+  unerkannte Antworten werden vorsichtig als unklar behandelt.
+- Lokaler Browsertest: Formular bleibt auf derselben Seite, Vorschau versendet nichts,
+  390px ohne horizontalen Überlauf, keine Browserfehler, null alte Buchungslinks.
+- Angaben zu FormSubmit/Gmail und 30 Tagen Anbieterspeicherung direkt am Formular.
+- Vorbereiteter Worker bleibt ungenutzt; seine Tests beweisen keine Live-Mailzustellung.
+
+Öffentliche Fassung:
+- Die direkte Gmail-Adresse wurde aus sämtlichen öffentlichen Dateien entfernt.
+- Endpoint bleibt leer; benötigt die öffentliche anonyme Formular-Kennung aus
+  der Aktivierungs-Mail, nicht den privaten Archiv-API-Schlüssel.
+- Die Fassung mit direkter Adresse bleibt ausschließlich in einem lokalen Branch.
+- Öffentliche Historie enthält diesen privaten Zwischenstand nicht.

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("./assets/fonts.css");
-.booking-intro{font-size:14px;margin-bottom:28px;max-width:36em}
+.reservation-privacy{font-size:10px;line-height:1.6;margin:0 0 20px;color:var(--muted)}.reservation-privacy summary{cursor:pointer}.reservation-privacy p{margin:10px 0}.reservation-privacy a{text-decoration:underline}
 :root{--paper:#efeae4;--ink:#171312;--muted:#71675e;--accent:#927239;--line:#d5ccc0;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Helvetica Neue',Helvetica,Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit;color:inherit}button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}img{max-width:100%;display:block}button{background:none;border:0}h1,h2,h3,p{margin:0}h1,h2{font-weight:500;font-family:var(--serif);letter-spacing:-.045em;line-height:1.04}h2{font-size:clamp(40px,4.9vw,74px)}em{font-weight:400}p{line-height:1.7}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:5px}::selection{background:#ba725b;color:white}[hidden]{display:none!important}
 .skip-link{position:fixed;left:20px;top:-80px;background:var(--paper);padding:16px;z-index:100}.skip-link:focus{top:10px}
