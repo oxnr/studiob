@@ -63,3 +63,18 @@ Nachtrag: nativer Versand gemäß anschließendem Nutzerauftrag
   der Aktivierungs-Mail, nicht den privaten Archiv-API-Schlüssel.
 - Die Fassung mit direkter Adresse bleibt ausschließlich in einem lokalen Branch.
 - Öffentliche Historie enthält diesen privaten Zwischenstand nicht.
+
+Erneuter Gesamttest nach Nutzerauftrag:
+- 22/22 Mock-Tests, Build und Diffcheck bestanden.
+- Live-Seite: keine Skriptfehler, alle drei Fotos nach Scrollen geladen.
+- Desktop 1280px sowie Mobil 390px/320px ohne horizontalen Überlauf.
+- DE/EN/TR, Mobilmenü/Escape, Reservierungsanker und Telefonnummer geprüft.
+- Lokales Formular: leere Pflichtfelder und kurze Telefonnummer korrekt
+  abgewiesen; gültige Beispieldaten ergeben nur Vorschauhinweis ohne Versand.
+- Menü/Impressum/Datenschutz liefern HTTP 200; Quelltext-Anker/Assets gültig.
+- Sechs QR-Artefakte frisch dekodiert, einschließlich gerendertem tatsächlichem PDF.
+- Markierter Funktionstest ohne Gästedaten: FormSubmit meldet erneut
+  "This form needs Activation" und bestätigt erneute Aktivierungs-Mail.
+- Versand bleibt gesperrt; Aktivierung, anonymer Endpoint und Postfacheingang offen.
+- Korrigiert: abgeschlossener Button behält seinen Zustand beim Sprachwechsel.
+- QR-Generator erzeugt zeitlose Prüfanweisungen und keine veralteten Live-Aussagen.

@@ -1,5 +1,5 @@
-import { translations } from './translations.js?v=20261020-native-1';
-import { submitReservation } from './formsubmit-service.js?v=20261020-native-1';
+import { translations } from './translations.js?v=20261020-native-2';
+import { submitReservation } from './formsubmit-service.js?v=20261020-native-2';
 
 const form = document.querySelector('#reservation-form');
 const status = document.querySelector('#form-status');
@@ -33,6 +33,7 @@ function setLanguage(lang) {
     form.elements[name].setAttribute('aria-label', t(key));
   }
   if (submitting) submitButton.querySelector('[data-i18n]').textContent = t('sending');
+  else if (completed) submitButton.querySelector('[data-i18n]').textContent = t('sentShort');
   const url = new URL(location.href);
   if (lang === 'de') url.searchParams.delete('lang');
   else url.searchParams.set('lang', lang);

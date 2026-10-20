@@ -1,28 +1,22 @@
 STUDIO B · QR-DATEIEN
-Stand: 20. Oktober 2026
 
 LIVE-ZIEL VOR DEM DRUCK PRÜFEN
-Der Reservierungs-QR führt zum nativen Formular auf studiob.bar/#reservieren.
-Die Formularsprache ist DE, EN oder TR; keine Weiterleitung zum alten System.
-Der E-Mail-Versand benötigt die einmalige FormSubmit-Aktivierung im Studio-B-
-Gmail-Postfach und anschließend die Freischaltung in site-config.js.
-Vor einer Druckauflage die Live-Domain per Smartphone scannen und den
-Formular öffnen. Postfacheingang vor einer größeren Druckauflage prüfen.
-Das QR-Decoding unten prüft den Inhalt des Codes, nicht die Mailzustellung.
-Die Dateien in studio-b-site-2026-10-20/print/ sind überholte Varianten auf Basis
-von studiob030.de und dürfen nicht als freigegebene neue QR-Dateien benutzt werden.
+Der Reservierungs-QR führt standardmäßig zum nativen Formular im Abschnitt
+#reservieren auf studiob.bar. Die Formularsprachen sind DE, EN und TR.
+Vor jeder Druckauflage den QR mit einem Smartphone scannen, das angezeigte Ziel
+mit der URL unten abgleichen und das Formular auf der Live-Seite öffnen.
+Erst drucken, wenn eine abgestimmte Testanfrage beim Betreiber-Postfach
+angekommen ist. Eine technische Erfolgsmeldung allein belegt den Empfang nicht.
+Das QR-Decoding prüft den Inhalt des Codes, nicht Formularfunktion oder
+Mailzustellung. Die Erzeugung dieser Dateien erteilt keine Druckfreigabe.
 
 ZIELE
 Reservierung: https://studiob.bar/#reservieren
 Startseite:   https://studiob.bar/
 
-Kein Code führt auf eine private Vorschau. Beide Ziele sind die vom Nutzer jetzt
-vorgegebene Basis studiob.bar. Als Standard wurde der Reservierungsabschnitt gewählt.
-Die Dateien wurden nur lokal erzeugt und nicht als QR-Schilder ausgegeben.
-Ein älterer Projekt-QR vom 6. September wurde zusätzlich dekodiert:
-https://g.page/r/CSzx6gGtoX8lEBM/review
-Dieser Code führte zu Google-Rezensionen. Ob er der vom Nutzer gemeinte alte QR
-ist, ist nicht bestätigt. Ein Ersatz durch den Reservierungs-QR ändert den Zweck.
+Beide Ziele verwenden die öffentliche Basisdomain studiob.bar.
+Vor dem Ersetzen eines alten QR dessen Ziel prüfen: Ein Bewertungs-QR hat
+einen anderen Zweck als dieser Reservierungs-QR.
 Ein gedruckter QR lässt sich nicht nachträglich ändern. Die neue Druckdatei muss
 den alten Ausdruck physisch ersetzen.
 
@@ -62,6 +56,6 @@ eingebettet; auf anderen Systemen dienen PDF-Basisschriften als Fallback.
 VERIFIKATION
 PNG-Dateien werden mit ZXing-C++ decodiert. SVG-Module werden aus der gespeicherten
 SVG-Datei rekonstruiert und ebenfalls decodiert. Das tatsächliche PDF wird mit
-PDFium gerendert und anschließend decodiert. Die erzeugte Druckvorschau wurde
-visuell kontrolliert. Der Decoder prüft die URL, nicht Verfügbarkeit, Inhalt,
+PDFium gerendert und anschließend decodiert. Die erzeugte Druckvorschau vor
+dem Druck visuell kontrollieren. Der Decoder prüft die URL, nicht Verfügbarkeit, Inhalt,
 Datenschutz oder E-Mail-Funktion der Zielseite.

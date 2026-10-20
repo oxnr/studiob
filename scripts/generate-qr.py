@@ -6,6 +6,7 @@ Run:     python scripts/generate-qr.py
 """
 
 import argparse
+from datetime import date
 import json
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -190,31 +191,25 @@ def decode(image, expected, filename):
 
 def write_readme(reservation_url, home_url):
     (OUTPUT / "README.txt").write_text(
-        f"""STUDIO B · QR-ENTWÜRFE — NOCH NICHT ZUM DRUCK FREIGEGEBEN
-Stand: 20. Oktober 2026
+        f"""STUDIO B · QR-DATEIEN
 
-DRUCKSPERRE / VORAUSSETZUNG
-Die neue Website und ihr Formular sind noch nicht auf studiob.bar veröffentlicht.
-Der QR wird erst mit der neuen Website und ihrem Abschnitt id="reservieren"
-nutzbar. Das Ziel wurde für diesen Entwurf angenommen; der Nutzer hat die
-Basisdomain studiob.bar festgelegt, aber das endgültige QR-Ziel noch nicht.
-Erst drucken, wenn das finale Ziel bestätigt, der Abschnitt auf der Live-Domain
-erreichbar und eine Reservierungsanfrage bis zur Betreiber-E-Mail getestet ist.
-Das QR-Decoding unten prüft den Inhalt des Codes, nicht diese Live-Funktion.
-Die Dateien in studio-b-site-2026-10-20/print/ sind überholte Varianten auf Basis
-von studiob030.de und dürfen nicht als freigegebene neue QR-Dateien benutzt werden.
+LIVE-ZIEL VOR DEM DRUCK PRÜFEN
+Der Reservierungs-QR führt standardmäßig zum nativen Formular im Abschnitt
+#reservieren auf studiob.bar. Die Formularsprachen sind DE, EN und TR.
+Vor jeder Druckauflage den QR mit einem Smartphone scannen, das angezeigte Ziel
+mit der URL unten abgleichen und das Formular auf der Live-Seite öffnen.
+Erst drucken, wenn eine abgestimmte Testanfrage beim Betreiber-Postfach
+angekommen ist. Eine technische Erfolgsmeldung allein belegt den Empfang nicht.
+Das QR-Decoding prüft den Inhalt des Codes, nicht Formularfunktion oder
+Mailzustellung. Die Erzeugung dieser Dateien erteilt keine Druckfreigabe.
 
 ZIELE
 Reservierung: {reservation_url}
 Startseite:   {home_url}
 
-Kein Code führt auf eine private Vorschau. Beide Ziele sind die vom Nutzer jetzt
-vorgegebene Basis studiob.bar. Der Reservierungsanker ist noch eine Annahme.
-Die Dateien wurden nur lokal erzeugt und nicht als QR-Schilder ausgegeben.
-Ein älterer Projekt-QR vom 6. September wurde zusätzlich dekodiert:
-https://g.page/r/CSzx6gGtoX8lEBM/review
-Dieser Code führte zu Google-Rezensionen. Ob er der vom Nutzer gemeinte alte QR
-ist, ist nicht bestätigt. Ein Ersatz durch den Reservierungs-QR ändert den Zweck.
+Beide Ziele verwenden die öffentliche Basisdomain studiob.bar.
+Vor dem Ersetzen eines alten QR dessen Ziel prüfen: Ein Bewertungs-QR hat
+einen anderen Zweck als dieser Reservierungs-QR.
 Ein gedruckter QR lässt sich nicht nachträglich ändern. Die neue Druckdatei muss
 den alten Ausdruck physisch ersetzen.
 
@@ -254,8 +249,8 @@ eingebettet; auf anderen Systemen dienen PDF-Basisschriften als Fallback.
 VERIFIKATION
 PNG-Dateien werden mit ZXing-C++ decodiert. SVG-Module werden aus der gespeicherten
 SVG-Datei rekonstruiert und ebenfalls decodiert. Das tatsächliche PDF wird mit
-PDFium gerendert und anschließend decodiert. Die erzeugte Druckvorschau wurde
-visuell kontrolliert. Der Decoder prüft die URL, nicht Verfügbarkeit, Inhalt,
+PDFium gerendert und anschließend decodiert. Die erzeugte Druckvorschau vor
+dem Druck visuell kontrollieren. Der Decoder prüft die URL, nicht Verfügbarkeit, Inhalt,
 Datenschutz oder E-Mail-Funktion der Zielseite.
 """,
         encoding="utf-8",
@@ -297,9 +292,9 @@ def main():
     (OUTPUT / "verification.json").write_text(
         json.dumps(
             {
-                "generated_for_date": "2026-10-20",
-                "release_status": "DRAFT_NOT_FOR_PRINT",
-                "release_gate": "Confirm final URL; deploy #reservieren on studiob.bar; verify owner email delivery.",
+                "generated_for_date": date.today().isoformat(),
+                "release_status": "REQUIRES_LIVE_VERIFICATION",
+                "release_gate": "Before printing, scan the QR, verify the live native reservation form, and confirm actual receipt of a test request in the owner's inbox.",
                 "error_correction": "H",
                 "quiet_zone_modules": BORDER,
                 "a6_size_mm": [105, 148],
