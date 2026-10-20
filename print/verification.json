@@ -1,0 +1,40 @@
+{
+  "generated_for_date": "2026-10-20",
+  "release_status": "DRAFT_NOT_FOR_PRINT",
+  "release_gate": "Confirm final URL; deploy #reservieren on studiob.bar; verify owner email delivery.",
+  "error_correction": "H",
+  "quiet_zone_modules": 4,
+  "a6_size_mm": [
+    105,
+    148
+  ],
+  "a6_qr_size_mm": 53,
+  "reservation_matrix_modules_including_border": 41,
+  "checks": [
+    {
+      "file": "studio-b-reservieren-qr.png",
+      "decoded_url": "https://studiob.bar/#reservieren",
+      "result": "PASS"
+    },
+    {
+      "file": "studio-b-reservieren-qr.svg",
+      "decoded_url": "https://studiob.bar/#reservieren",
+      "result": "PASS"
+    },
+    {
+      "file": "studio-b-startseite-qr.png",
+      "decoded_url": "https://studiob.bar/",
+      "result": "PASS"
+    },
+    {
+      "file": "studio-b-startseite-qr.svg",
+      "decoded_url": "https://studiob.bar/",
+      "result": "PASS"
+    },
+    {
+      "file": "studio-b-reservieren-a6.pdf",
+      "decoded_url": "https://studiob.bar/#reservieren",
+      "result": "PASS"
+    }
+  ]
+}

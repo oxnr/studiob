@@ -1,0 +1,23 @@
+Studio B Redesign QA — 20.10.2026
+Basis: GitHub oxnr/studiob, branch codex/studio-b-reservations.
+
+Geprüft:
+- 14 automatisierte Backend-/Client-Adaptertests bestanden. Alle Requests gemockt.
+- Erfolgs-/Fehlerantworten, Timeouts, fehlende Konfiguration, feste Empfängeradresse,
+  Turnstile Host/Action, Requestgröße, Eingaben und Berlin-Zeit geprüft.
+- Build erfolgreich; lokale Bild-/Script-/CSS-Verweise auf vorhandene Dateien geprüft.
+- Alle HTML-Übersetzungsschlüssel in DE/EN/TR vorhanden.
+- Browser: Desktop1280px, Mobil390px und320px ohne horizontalen Überlauf.
+- DE/EN/TR Sprachwechsel in390px: kein Überlauf.
+- Mobilmenü öffnet; Escape schließt.
+- Leeres Formular: Datum, Uhrzeit, Name, E-Mail, Telefon und Datenschutz fehlen korrekt.
+- Vollständiges Testformular: ausdrücklicher Vorschauerfolg, kein Versand/kein Buchungseintrag.
+- Keine Browserwarnungen/JS-Fehler in geprüfter Vorschau.
+- QR:5/5 Bild-/PDF-Decodierungen; siehe print/verification.json.
+
+Nicht geprüft/nicht durchgeführt:
+- Keine Live-E-Mail oder Mailzustellung. Empfänger, Absender und Dienstzugänge fehlen.
+- Keine öffentliche Veröffentlichung auf studiob.bar und kein Ersatz gedruckter QR-Codes.
+- Datenschutz/Impressum für neue Domain und Versandverarbeitung noch zu finalisieren.
+- Bar-Öffnungszeiten nicht neu verifiziert; Website zeigt nur bestätigte Frühstück-/Lunchzeiten.
+- Google Ads, Maps, Budget und Profil unverändert.

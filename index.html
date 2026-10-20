@@ -1,45 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Studio B · Bar · Küche · Kreuzberg</title>
-<meta name="description" content="Studio B — Bar & Küche in Kreuzberg 36. Oranienstraße 168, 10999 Berlin.">
-<meta name="theme-color" content="#120e0f">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@500&family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/street.jpg" fetchpriority="high">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#381b21">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Dein Tag. Dein Abend. Dein Studio B. Frühstück, Lunch und Cocktails in Berlin-Kreuzberg. Oranienstraße 168. Tisch online anfragen oder 030 67392575 anrufen.">
+  <meta property="og:title" content="Studio B — Gute Tage. Lange Nächte.">
+  <meta property="og:description" content="Café, Kitchen & Bar in Berlin-Kreuzberg. Oranienstraße 168.">
+  <meta property="og:image" content="https://studiob.bar/assets/street.jpg">
+  <meta property="og:type" content="website">
+  <title>Studio B — Café, Kitchen & Bar · Berlin Kreuzberg</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./redesign.css">
+  <script src="./site-config.js"></script>
+  <script type="module" src="./app.js"></script>
 </head>
 <body>
-<main class="hero fassade">
-  <div class="reel drift" aria-hidden="true">
-    <img src="assets/street.jpg" alt="" fetchpriority="high" style="--d:0s">
-    <img src="assets/wall.jpg" alt="" decoding="async" style="--d:-9s">
-    <img src="assets/bar.jpg" alt="" decoding="async" style="--d:-6s">
-    <img src="assets/door.jpg" alt="" decoding="async" style="--d:-3s">
-    <div class="shade"></div>
-    <div class="flick"></div>
-    <div class="grain"></div>
-  </div>
-
-  <nav class="nav">
-    <div class="links"><a href="https://www.instagram.com/studio.b.bln/">Instagram</a></div>
-    <div class="links"><span>Kreuzberg 36</span></div>
-  </nav>
-
-  <h1 class="mark wordmark"><span class="s">Studio</span><span class="b">B</span></h1>
-
-  <div class="footer">
-    <div class="info">
-      <div>Bar · Küche<span class="muted"> / Bar · Kitchen</span></div>
-      <a class="dim" href="https://www.google.com/maps/place/Studio+B/@52.5016235,13.4146316,17z/data=!3m1!4b1!4m6!3m5!1s0x47a84f69cd9906bf:0x257fa1ad01eaf12c!8m2!3d52.5016203!4d13.4172065!16s%2Fg%2F11nty3sv2d?entry=ttu&amp;g_ep=EgoyMDI2MDkwMS4wIKXMDSoASAFQAw%3D%3D">Oranienstraße 168 · 10999 Berlin ↗</a>
+  <a href="#main" class="skip-link" data-i18n="skip">Zum Inhalt</a>
+  <header class="site-header">
+    <a href="#home" class="logo" aria-label="Studio B — Startseite"><span class="wordmark"><span class="s">Studio</span><span class="b">B</span></span></a>
+    <nav class="desktop-nav" aria-label="Hauptnavigation">
+      <a href="#studio" data-i18n="navStudio">Das Studio</a>
+      <a href="#day" data-i18n="navFood">Essen & Trinken</a>
+      <a href="#visit" data-i18n="navVisit">Hier sind wir</a>
+    </nav>
+    <div class="header-actions">
+      <div class="languages" role="group" aria-label="Language">
+        <button data-lang="de" aria-pressed="true">DE</button><button data-lang="en" aria-pressed="false">EN</button><button data-lang="tr" aria-pressed="false">TR</button>
+      </div>
+      <a class="header-book" href="#reservieren"><span data-i18n="reserve">Tisch anfragen</span><span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav"><span data-i18n="menu">Menü</span><span class="menu-lines" aria-hidden="true"></span></button>
     </div>
-  </div>
-</main>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile Navigation" hidden>
+      <a href="#studio" data-i18n="navStudio">Das Studio</a><a href="#day" data-i18n="navFood">Essen & Trinken</a><a href="#visit" data-i18n="navVisit">Hier sind wir</a><a href="#reservieren" data-i18n="reserve">Tisch anfragen</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <img class="hero-image" src="./assets/street.jpg" alt="Studio B an der Oranienstraße in Kreuzberg" width="1162" height="820" fetchpriority="high">
+      <div class="hero-shade"></div>
+      <div class="hero-top"><span>CAFÉ · KITCHEN · BAR</span><span>BERLIN, KREUZBERG</span></div>
+      <div class="hero-content">
+        <p class="eyebrow light" data-i18n="heroEyebrow">ORANIENSTRASSE 168. DEIN PLATZ IM KIEZ.</p>
+        <h1 id="hero-title"><span data-i18n="heroFirst">Gute Tage.</span><em data-i18n="heroSecond">Lange Nächte.</em></h1>
+        <p class="hero-lead" data-i18n="heroLead">Vom ersten Kaffee bis zum letzten Gespräch.</p>
+        <a class="button button-cream" href="#reservieren"><span data-i18n="heroCta">Tisch anfragen</span><span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-bottom"><span>EAT. DRINK. CONNECT.</span><a href="#studio"><span data-i18n="discover">Studio B entdecken</span><span aria-hidden="true">↓</span></a><span>KREUZBERG 36</span></div>
+    </section>
+
+    <div class="service-strip" aria-label="Angebot">
+      <span><i class="sun-icon" aria-hidden="true">☼</i><span data-i18n="breakfastStrip">Frühstück 09–16 Uhr</span></span>
+      <span data-i18n="lunchStrip">Lunch 11–20 Uhr</span>
+      <span><i aria-hidden="true">☾</i><span data-i18n="cocktailStrip">Cocktails & gute Gesellschaft</span></span>
+      <a href="tel:+493067392575">030 67392575 <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <section id="studio" class="intro section-pad">
+      <div class="section-label"><span>01 / STUDIO B</span><span class="small-star" aria-hidden="true">✳</span></div>
+      <div class="intro-main"><h2><span data-i18n="introFirst">Komm für einen Kaffee.</span><br><em data-i18n="introSecond">Bleib für den Abend.</em></h2>
+        <div class="intro-bottom"><p data-i18n="introCopy">Ein langsames Frühstück. Ein Lunch mit Freunden. Ein Drink, aus dem noch einer wird. Studio B bringt zusammen, was einen guten Tag ausmacht – mitten in der Oranienstraße.</p><a class="text-link" href="#day"><span data-i18n="exploreMenu">Entdecke unseren Geschmack</span><span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section id="day" class="day-section section-pad">
+      <div class="day-image-wrap"><img class="day-image" src="./assets/acai.jpeg" alt="Açaí Bowl im Studio B mit frischen Früchten" width="1570" height="1600" loading="lazy"><div class="image-caption"><span>THE DAY SIDE</span><span>STUDIO B, BERLIN</span></div><span class="roundel" aria-hidden="true">TAKE<br>YOUR<br><em>time.</em></span></div>
+      <div class="day-copy">
+        <p class="eyebrow" data-i18n="dayEyebrow">02 / VON FRÜH BIS SPÄTER</p>
+        <h2><span data-i18n="dayFirst">Ein guter Tag</span><br><em data-i18n="daySecond">hat Geschmack.</em></h2>
+        <p data-i18n="dayCopy">Frühstück ohne Eile, frische Bowls und etwas Warmes zum Lunch. Dazu dein Lieblingskaffee oder ein Matcha. Such dir deinen Moment aus.</p>
+        <div class="menu-list">
+          <div><span data-i18n="foodBreakfast">Frühstück & Brunch</span><span>09–16</span></div>
+          <div><span data-i18n="foodLunch">Lunch, Pasta & Salate</span><span>11–20</span></div>
+          <div><span data-i18n="foodCoffee">Kaffee, Matcha & Açaí</span><span aria-hidden="true">↗</span></div>
+        </div>
+        <a class="button button-dark menu-link" href="https://studiob030.de/speisekarte/?mode=day"><span data-i18n="viewMenu">Zur Speisekarte</span><span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section id="night" class="night-section">
+      <div class="night-graphic"><img src="./assets/bar.jpg" alt="Blick auf die Bar im Studio B" loading="lazy" width="1092" height="1306"><span class="bar-caption">THE NIGHT SIDE / STUDIO B</span></div>
+      <div class="night-copy">
+        <p class="eyebrow light" data-i18n="nightEyebrow">03 / SAME PLACE. DIFFERENT MOOD.</p>
+        <h2><span data-i18n="nightFirst">Der Tag geht.</span><br><em data-i18n="nightSecond">Du bleibst.</em></h2>
+        <p data-i18n="nightCopy">Draußen wird es dunkler, die Gespräche werden länger. Cocktails, Longdrinks und deine Lieblingsmenschen: Willkommen auf der anderen Seite von Studio B.</p>
+        <a class="button button-outline" href="#reservieren"><span data-i18n="nightCta">Ein Tisch für euren Abend</span><span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="night-footer"><span>GOOD DRINKS.</span><span>GOOD COMPANY.</span><span>STUDIO B.</span></div>
+    </section>
+
+    <section id="reservieren" class="reservation-section section-pad">
+      <div class="reservation-copy">
+        <p class="eyebrow" data-i18n="reservationEyebrow">04 / BIS GLEICH IM STUDIO</p>
+        <h2><span data-i18n="reservationFirst">Ein Tisch.</span><br><em data-i18n="reservationSecond">Eure Zeit.</em></h2>
+        <p data-i18n="reservationCopy">Sag uns, wann ihr kommen möchtet. Wir erhalten eure Anfrage und melden uns per E-Mail mit der Bestätigung.</p>
+        <p class="reservation-note" data-i18n="reservationNote">Dein Tisch ist erst nach unserer Zusage reserviert.</p>
+        <div class="phone-help"><span data-i18n="phoneHelp">Lieber persönlich? Ruf uns an.</span><a href="tel:+493067392575">030 67392575 ↗</a></div>
+      </div>
+      <div class="reservation-card">
+        <div class="form-header"><span data-i18n="formTitle">DEINE RESERVIERUNGSANFRAGE</span><span aria-hidden="true">↗</span></div>
+        <p class="preview-note" id="preview-note" hidden data-i18n="previewNote">Designvorschau: Hier werden keine Anfragen versendet. Du kannst das Formular ausprobieren.</p>
+        <form id="reservation-form" method="post" action="#reservieren">
+          <div class="form-row three">
+            <label><span data-i18n="guestsLabel">Personen</span><select name="guests" required aria-label="Personen"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option></select></label>
+            <label><span data-i18n="dateLabel">Datum</span><input type="date" name="date" required aria-label="Datum"></label>
+            <label><span data-i18n="timeLabel">Uhrzeit</span><select name="time" required aria-label="Uhrzeit"><option value="" data-i18n="choose">Bitte wählen</option></select></label>
+          </div>
+          <p class="small form-hint" data-i18n="timeHint">Andere Uhrzeit oder mehr als 20 Gäste? Ruf uns gerne an.</p>
+          <label><span data-i18n="nameLabel">Vor- und Nachname</span><input type="text" name="name" autocomplete="name" maxlength="100" required placeholder="Alex Beispiel"></label>
+          <div class="form-row two">
+            <label><span data-i18n="emailLabel">E-Mail</span><input type="email" name="email" autocomplete="email" maxlength="254" required placeholder="alex@beispiel.de"></label>
+            <label><span data-i18n="phoneLabel">Telefon inkl. Vorwahl</span><input type="tel" name="phone" autocomplete="tel" maxlength="30" required placeholder="+49 170 1234567"></label>
+          </div>
+          <label><span data-i18n="noteLabel">Deine Nachricht (optional)</span><textarea name="note" rows="2" maxlength="1000" data-i18n-placeholder="notePlaceholder" placeholder="Gibt es noch etwas, das wir wissen sollten?"></textarea></label>
+          <div class="honeypot" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <label class="consent"><input type="checkbox" name="privacy" required><span><span data-i18n="consent">Ich habe die Hinweise zum Datenschutz gelesen. Meine Angaben werden zur Bearbeitung der Anfrage verwendet.</span> <a class="privacy-link" href="https://studiob030.de/datenschutz/" target="_blank" rel="noopener" data-i18n="privacy">Datenschutz</a></span></label>
+          <button class="button button-dark submit" type="submit" disabled><span data-i18n="submit">Tisch unverbindlich anfragen</span><span aria-hidden="true">↗</span></button>
+          <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        </form>
+        <noscript><p>Bitte aktiviere JavaScript oder reserviere telefonisch unter <a href="tel:+493067392575">030 67392575</a>.</p></noscript>
+      </div>
+    </section>
+
+    <section id="visit" class="visit-section section-pad">
+      <div class="visit-title"><p class="eyebrow" data-i18n="visitEyebrow">05 / MITTEN IM KIEZ</p><h2><span data-i18n="visitFirst">Hier bist du</span><br><em data-i18n="visitSecond">richtig.</em></h2></div>
+      <div class="visit-details">
+        <div><h3>STUDIO B</h3><address>Oranienstraße 168<br>10999 Berlin-Kreuzberg</address><a class="text-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Studio%20B%2C%20Oranienstra%C3%9Fe%20168%2C%2010999%20Berlin"><span data-i18n="directions">Route planen</span><span aria-hidden="true">↗</span></a></div>
+        <div><h3 data-i18n="daily">TÄGLICH</h3><dl><div><dt data-i18n="breakfast">Frühstück</dt><dd>09–16 Uhr</dd></div><div><dt>Lunch</dt><dd>11–20 Uhr</dd></div></dl><p class="small" data-i18n="hoursNote">Die aktuellen Bar-Öffnungszeiten findest du in unserem Google-Profil.</p></div>
+        <div><h3 data-i18n="goodToKnow">GUT ZU WISSEN</h3><p data-i18n="terrace">16 Plätze draußen</p><p data-i18n="payments">Bar · EC · Visa · Amex</p><a class="phone-link" href="tel:+493067392575">+49 30 67392575</a></div>
+      </div>
+    </section>
+    <section class="closing"><p data-i18n="closing">Dein Kiez. Dein Moment.</p><a href="#reservieren" aria-label="Studio B — Tisch anfragen">STUDIO B<span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer><span>© <span id="year">2026</span> STUDIO B · BERLIN</span><a href="https://www.instagram.com/studio.b.bln/" target="_blank" rel="noopener">INSTAGRAM ↗</a><div><a class="imprint-link" href="https://studiob030.de/impressum/" data-i18n="imprint">Impressum</a><a class="privacy-link" href="https://studiob030.de/datenschutz/" data-i18n="privacy">Datenschutz</a><a href="#home" data-i18n="backTop">Nach oben ↑</a></div></footer>
+  <a class="mobile-book" href="#reservieren"><span data-i18n="reserve">Tisch anfragen</span><span aria-hidden="true">↗</span></a>
 </body>
 </html>

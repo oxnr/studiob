@@ -1,0 +1,16 @@
+name = "studio-b-reservations"
+main = "worker.mjs"
+compatibility_date = "2026-10-20"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGIN = "https://studiob.bar"
+
+# Configure these through `wrangler secret put`, never commit their values:
+# RESEND_API_KEY
+# RESERVATION_TO — owner's confirmed reservation inbox (still pending)
+# MAIL_FROM — verified sender email address, without a display name
+# TURNSTILE_SECRET_KEY — mandatory for sending; missing configuration fails closed
+
+[observability]
+enabled = false
