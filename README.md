@@ -1,12 +1,12 @@
 # Studio B
 
 Redesign der bestehenden Website **studiob.bar** auf Basis von `oxnr/studiob`.
-Stand: 20. Oktober 2026. Eigener Branch `codex/studio-b-reservations`.
+Stand: 21. Oktober 2026. Eigener Branch `codex/studio-b-reservations`.
 
 ## Status
 
 Produktive Version für GitHub Pages (`main`, Repository-Root, Domain `studiob.bar`).
-Das Reservierungsformular ist direkt in die Website eingebaut. Der AJAX-Versand über FormSubmit an das Studio-B-Gmail-Postfach ist vorbereitet; Gäste bleiben auf studiob.bar. Keine Weiterleitung zum alten Buchungssystem. Bis zur E-Mail-Aktivierung und Verbindung des anonymen Formular-Endpunkts ist der Versand über `reservationEnabled: false` gesperrt, mit telefonischer Alternative. Die Empfängeradresse steht nicht im öffentlichen Code.
+Das Reservierungsformular ist direkt in die Website eingebaut. Der AJAX-Versand über FormSubmit an das Studio-B-Gmail-Postfach ist aktiviert; Gäste bleiben auf studiob.bar. Keine Weiterleitung zum alten Buchungssystem. Die öffentliche Formular-Kennung ist in `site-config.js` hinterlegt, `reservationEnabled` ist `true`. Aktivierung, positive API-Antwort und Eingang einer markierten Testmail einschließlich Antwortadresse wurden am 21.10.2026 geprüft. Die Empfängeradresse steht nicht im öffentlichen Code.
 
 - Eigene Studio-B-Fotos, das originale Vektorlogo aus der gelieferten `STUDIO B.pdf` und warme dunkle Farbwelt. Die am 20.10.2026 gelieferten Fotos ergänzen Hero, Açaí-Bereich und eine aufklappbare Galerie.
 - Ergänzt: Tag-/Abendbereiche, Kontakt, Telefon, Formular und mobile Reservierungsnavigation.
@@ -39,12 +39,14 @@ Gast sendet eine **unverbindliche Anfrage** mit Datum, Uhrzeit, Personen, Name, 
 
 Der einfache Dienst benötigt keinen eigenen Server und keine privaten API-Schlüssel. Erst nach Bestätigung der Aktivierungs-Mail wird zugestellt. FormSubmit speichert Anfragen für 30 Tage; dies steht direkt beim Formular inklusive Anbieter-Datenschutzlink. Ein Honeypot sowie der Spamfilter des Anbieters sind aktiv; CAPTCHA wird nicht ausdrücklich deaktiviert. Keine automatische Antwortmail an Gäste. Der UUID dient als Anfragekennung, nicht als garantierte Deduplizierung beim Dienst. Bei unklarer Netzwerkantwort erfolgt keine automatische Wiederholung.
 
-Einrichtung abschließen:
+Einrichtung und Wiederinbetriebnahme:
 
-1. Im Studio-B-Gmail-Postfach die FormSubmit-Mail öffnen und „Activate Form“ bestätigen. Der Anbieter hat den Versand dieser Mail am 20.10.2026 per API bestätigt. Der Einrichtungstext ist ausdrücklich keine Reservierung.
+1. Im Studio-B-Gmail-Postfach die neueste FormSubmit-Mail öffnen und „Activate Form“ bestätigen. Am 21.10.2026 erledigt. Nach erneuter Aktivierungsanforderung ist der ältere Bestätigungslink möglicherweise ungültig; die öffentliche Formular-Kennung bleibt davon getrennt. Einrichtungstexte und Tests sind ausdrücklich keine Reservierungen.
 2. Die anonyme Formular-Kennung aus der Anbieter-Mail in `reservationEndpoint` einsetzen: `https://formsubmit.co/ajax/ANONYME_FORMULAR_KENNUNG`. Keine private API-Kennung zum Lesen des Nachrichtenarchivs veröffentlichen. Die verwendete Kennung muss ausdrücklich für das öffentliche Formular bestimmt sein.
 3. Mit einem als Test markierten Versand die positive API-Antwort und den Postfacheingang prüfen. Aktivierungsantworten werden niemals als erfolgreiche Reservierungsanfrage angezeigt.
 4. `reservationEnabled` in `site-config.js` auf `true` setzen, Tests/Build ausführen, veröffentlichen und Formular im Browser prüfen.
+
+Bei einem Versandproblem `reservationEnabled` auf `false` setzen und mit neuer Cache-Version veröffentlichen; dann zeigt die Website wieder die telefonische Alternative. Tests immer deutlich als „FUNKTIONSTEST – KEINE RESERVIERUNG“ kennzeichnen und anhand einer neuen Anfrage-ID im Postfach abgleichen. Eine erfolgreiche API-Antwort allein beweist keinen Postfacheingang. Der technische Test vom 21.10.2026 um 10:54 Uhr (Berlin) wurde im Posteingang bestätigt; Datum, Uhrzeit, Personen, Nachricht und Reply-To stimmten überein.
 
 Außerhalb von `https://studiob.bar` läuft das Formular als klar gekennzeichnete Vorschau ohne Versand. Ohne JavaScript bleibt der Absende-Button deaktiviert und eine Telefonalternative sichtbar. Der zuvor vorbereitete Worker (`server/` und `reservation-service.js`) bleibt als ungenutzte Alternative erhalten; er ist nicht bereitgestellt und wird nicht von `app.js` geladen.
 

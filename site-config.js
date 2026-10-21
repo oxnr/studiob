@@ -1,6 +1,6 @@
 // Public deployment configuration. Never put API keys or private mail credentials here.
-// Add the anonymous FormSubmit endpoint after activation, then verify mail delivery.
+// Public form ID from the activation email; delivery verified on 2026-10-21.
 window.STUDIO_B_CONFIG = Object.freeze({
-  reservationEndpoint: "",
-  reservationEnabled: false
+  reservationEndpoint: "https://formsubmit.co/ajax/75b7803006582db36cee546b1a360226",
+  reservationEnabled: true
 });
