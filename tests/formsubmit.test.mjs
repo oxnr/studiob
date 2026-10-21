@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { submitReservation } from '../formsubmit-service.js';
+import { decodeReplyFragment } from '../reservation-reply.js';
 
 const endpoint = 'https://formsubmit.co/ajax/test_form_id_not_a_real_id_12345678';
 const now = new Date('2026-10-20T10:00:00Z');
@@ -73,6 +74,7 @@ test('payload contains booking details and reply-to email but no recipient overr
     ...booking, _cc: 'attacker@example.invalid', _next: 'https://attacker.invalid',
     _captcha: 'false', to: 'attacker@example.invalid', turnstileToken: 'not-transmitted',
     reservationEndpoint: 'https://formsubmit.co/ajax/ignored_fake_form_id_12345678',
+    'Anfrage beantworten': 'https://attacker.invalid/',
   }, { now });
   assert.equal(result.success, true);
   assert.equal(result.requestId, booking.requestId);
@@ -87,6 +89,16 @@ test('payload contains booking details and reply-to email but no recipient overr
   assert.equal(payload.Uhrzeit, '18:30 (Europe/Berlin)');
   assert.equal(payload.Personen, 2);
   assert.equal(payload['Anfrage-ID'], booking.requestId);
+  const replyLink = new URL(payload['Anfrage beantworten']);
+  assert.equal(replyLink.origin, 'https://studiob.bar');
+  assert.equal(replyLink.pathname, '/reply.html');
+  assert.equal(replyLink.search, '');
+  const reply = decodeReplyFragment(replyLink.hash);
+  assert.equal(reply.email, booking.email);
+  assert.equal(reply.requestId, booking.requestId);
+  assert.equal(reply.guests, 2);
+  assert.equal(reply.phone, undefined);
+  assert.equal(reply.note, undefined);
   assert.equal(payload._honey, '');
   assert.equal(payload._template, 'table');
   assert.equal(payload._url, 'https://studiob.bar/#reservieren');
@@ -107,6 +119,16 @@ test('activation never looks like a sent reservation, even with a truthy success
     });
   }
   assert.equal(calls.length, 2);
+});
+
+test('valid addresses unsupported by the draft helper still deliver with a direct reply fallback', async t => {
+  const calls = browser(t, [json(success)]);
+  const result = await submitReservation({ ...booking, email: 'guest%tag@example.invalid' }, { now });
+  assert.equal(result.success, true);
+  const payload = JSON.parse(calls[0].options.body);
+  assert.equal(payload.email, 'guest%tag@example.invalid');
+  assert.match(payload['Anfrage beantworten'], /^Bitte direkt auf diese E-Mail antworten/);
+  assert.doesNotMatch(payload['Anfrage beantworten'], /https:/);
 });
 
 test('invalid inputs and honeypot are rejected before network activity', async t => {

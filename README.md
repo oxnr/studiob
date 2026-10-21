@@ -6,7 +6,7 @@ Stand: 21. Oktober 2026. Eigener Branch `codex/studio-b-reservations`.
 ## Status
 
 Produktive Version für GitHub Pages (`main`, Repository-Root, Domain `studiob.bar`).
-Das Reservierungsformular ist direkt in die Website eingebaut. Der AJAX-Versand über FormSubmit an das Studio-B-Gmail-Postfach ist aktiviert; Gäste bleiben auf studiob.bar. Keine Weiterleitung zum alten Buchungssystem. Die öffentliche Formular-Kennung ist in `site-config.js` hinterlegt, `reservationEnabled` ist `true`. Aktivierung, positive API-Antwort und Eingang einer markierten Testmail einschließlich Antwortadresse wurden am 21.10.2026 geprüft. Die Empfängeradresse steht nicht im öffentlichen Code.
+Das Reservierungsformular ist direkt in die Website eingebaut. Der AJAX-Versand über FormSubmit an das Studio-B-Gmail-Postfach ist aktiviert; Gäste bleiben auf studiob.bar. Keine Weiterleitung zum alten Buchungssystem. Die öffentliche Formular-Kennung ist in `site-config.js` hinterlegt, `reservationEnabled` ist `true`. Aktivierung, positive API-Antwort und Eingang einer markierten Testmail einschließlich Antwortadresse wurden am 21.10.2026 geprüft. Der Versandendpunkt verwendet eine öffentliche Formular-Kennung; die vom Nutzer zur Veröffentlichung freigegebene Kontaktadresse steht im Impressum.
 
 - Eigene Studio-B-Fotos, das originale Vektorlogo aus der gelieferten `STUDIO B.pdf` und warme dunkle Farbwelt. Die am 20.10.2026 gelieferten Fotos ergänzen Hero, Açaí-Bereich und eine aufklappbare Galerie.
 - Ergänzt: Tag-/Abendbereiche, Kontakt, Telefon, Formular und mobile Reservierungsnavigation.
@@ -50,7 +50,21 @@ Bei einem Versandproblem `reservationEnabled` auf `false` setzen und mit neuer C
 
 Außerhalb von `https://studiob.bar` läuft das Formular als klar gekennzeichnete Vorschau ohne Versand. Ohne JavaScript bleibt der Absende-Button deaktiviert und eine Telefonalternative sichtbar. Der zuvor vorbereitete Worker (`server/` und `reservation-service.js`) bleibt als ungenutzte Alternative erhalten; er ist nicht bereitgestellt und wird nicht von `app.js` geladen.
 
-Die Gestaltung verwendet ausschließlich vorhandene und vom Nutzer gelieferte Studio-B-Aufnahmen. Die allgemeinen Betreiber-Rechtstexte bleiben verlinkt; die konkrete Verarbeitung der neuen Reservierungsanfrage ist zusätzlich direkt im Formular erläutert.
+Die Gestaltung verwendet ausschließlich vorhandene und vom Nutzer gelieferte Studio-B-Aufnahmen. Die eigenen Informationsseiten sind verlinkt; die konkrete Verarbeitung der Reservierungsanfrage ist zusätzlich direkt im Formular erläutert.
+
+## Antworten auf Reservierungsanfragen
+
+Neue Anfrage-E-Mails enthalten das Feld „Anfrage beantworten“ mit einem Link auf `reply.html`. Das Team kann eine Zusage, Absage, einen Vorschlag 30 Minuten früher/später, einen anderen Termin oder eine eigene Rückfrage vorbereiten. Die festen Texte folgen der Sprache des Gastes (DE/EN/TR); eigene Rückfragen werden nicht automatisch übersetzt. Betreff und Nachricht bleiben bearbeitbar. „In Mail öffnen“ bereitet einen `mailto:`-Entwurf im eingerichteten Mailprogramm vor; erst dort sendet das Team selbst. Vor dem Senden das Studio-B-Absenderkonto, den Empfänger und die Verfügbarkeit prüfen. Alternativ kann der Text in die Antwort auf die Originalmail kopiert werden. Ein neuer Mailentwurf wird nicht zwingend dem ursprünglichen Mailthread zugeordnet.
+
+`reservation-reply.js` kodiert ausschließlich Name, Gast-E-Mail, Datum, Uhrzeit, Personen, Sprache und Anfrage-ID im URL-Fragment. Telefonnummer und freie Gastnachricht bleiben aus dem Link heraus. Der Link ist nicht verschlüsselt und kein Authentizitätsnachweis: Originalmail und Angaben abgleichen, Link nicht weitergeben. Die Seite liest das Fragment, entfernt es aus der Adresszeile und behält die Daten nur im Arbeitsspeicher. Nach Neuladen den ursprünglichen E-Mail-Link erneut öffnen. Keine zusätzliche Datenbank, Anmeldung, Versand-API oder Speicherung eines Bearbeitungsstatus. Alte E-Mails erhalten nachträglich keinen Link; dort direkt antworten. Seltene Gastadressen mit Prozentzeichen bekommen ebenfalls die normale Antwortmöglichkeit, damit die konservative `mailto:`-Validierung keine Reservierungsanfrage verhindert.
+
+Die Bedienung muss nach Änderungen anhand einer eindeutig markierten Live-Testmail geprüft werden: vollständiger Link im tatsächlichen Postfach, alle Aktionen, editierter Text und Empfänger im Mailentwurf. Auf dem tatsächlichen Besitzer-Handy ist die Wahl der Mail-App und des Absenderkontos gesondert zu prüfen. Automatisch versendet die Antwortseite nichts; Zeitvorschläge und Rückfragen bestätigen noch keinen Tisch.
+
+## Impressum und Datenschutz
+
+`impressum.html` und `datenschutz.html` liegen auf der eigenen Domain; Startseite, Formular und Speisekarte verlinken sie direkt. Die Seiten sind derzeit deutsch. Der Nutzer hat am 21.10.2026 „Studio B“ ausdrücklich als Platzhalter für den noch nicht bestätigten rechtlichen Betreiber erlaubt. Die alte Website lieferte bei der erneuten Prüfung HTTP 503. Aus dem Google-Ads-Zahlungsprofil wird keine Betreiberidentität abgeleitet.
+
+Offen bleiben vollständiger rechtlicher Betreibername und gegebenenfalls Rechtsform, Vertretung, Register-/Identifikationsangaben sowie zuständige Aufsichtsbehörde. Die Datenschutzhinweise beschreiben den tatsächlichen Ablauf mit GitHub Pages, FormSubmit, Gmail und Antwortentwürfen. Die 30 Tage des FormSubmit-Archivs sind keine automatische Löschfrist für Gmail. Die Postfach-Löschfrist und die vertraglichen Datenschutz-/Übermittlungsgrundlagen der Anbieter müssen mit dem Betreiber geklärt werden. Beide Seiten kennzeichnen ihre noch fehlenden Angaben; sie sind keine Zusage rechtlicher Vollständigkeit.
 
 ## Veröffentlichung und Rücknahme
 

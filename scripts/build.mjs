@@ -5,7 +5,7 @@ import './render-menu.mjs';
 const output = resolve('dist');
 await rm(output, {recursive:true,force:true});
 await mkdir(output,{recursive:true});
-for (const name of ['index.html','speisekarte.html','menu.css','menu.js','redesign.css','app.js','translations.js','formsubmit-service.js','site-config.js','assets']) {
+for (const name of ['index.html','speisekarte.html','impressum.html','datenschutz.html','legal.css','reply.html','reply.css','reply.js','reservation-reply.js','menu.css','menu.js','redesign.css','app.js','translations.js','formsubmit-service.js','site-config.js','assets']) {
   await cp(resolve(name),resolve(output,name),{recursive:true});
 }
 console.log(`Static site prepared: ${output}`);

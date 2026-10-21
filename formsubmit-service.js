@@ -1,3 +1,5 @@
+import { createReplyLink } from './reservation-reply.js?v=20261021-reply-1';
+
 const PUBLIC_ENDPOINT = /^https:\/\/formsubmit\.co\/ajax\/[A-Za-z0-9_-]{20,128}$/;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const EMAIL = /^[^\s@<>(),;:"\\\u0000-\u001f\u007f]{1,64}@[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?\.[a-z]{2,63}$/i;
@@ -108,6 +110,10 @@ export async function submitReservation(values, { now = new Date() } = {}) {
     Nachricht: booking.note || 'Keine',
     Sprache: language,
     'Anfrage-ID': booking.requestId,
+    // Keep unusual valid addresses deliverable even when the mailto helper cannot use them safely.
+    'Anfrage beantworten': booking.email.includes('%')
+      ? 'Bitte direkt auf diese E-Mail antworten; für diese Adresse ist kein Antwortlink verfügbar.'
+      : createReplyLink({ ...booking, language }),
     Hinweis: 'Reservierungsanfrage, noch keine bestätigte Buchung. Bitte Verfügbarkeit prüfen und dem Gast persönlich antworten.',
     _subject: `Studio B · Reservierungsanfrage · ${booking.date} ${booking.time} · ${booking.requestId}`,
     _template: 'table',

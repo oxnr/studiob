@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="theme-color" content="#efeae4">
+  <title>Reservierung beantworten · Studio B</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/brand/favicon.svg">
+  <link rel="stylesheet" href="./redesign.css?v=20261021-reply-1">
+  <link rel="stylesheet" href="./reply.css?v=20261021-reply-1">
+  <script type="module" src="./reply.js?v=20261021-reply-1"></script>
+</head>
+<body class="reply-page">
+  <a href="#reply-main" class="skip-link">Zum Inhalt</a>
+  <header class="reply-header"><a href="./" class="logo" aria-label="Studio B — Startseite"><img src="./assets/brand/logo-mark.svg" alt="" width="372" height="169"></a><span>FÜR DAS STUDIO-B-TEAM</span></header>
+  <main id="reply-main" class="reply-main">
+    <p class="eyebrow">RESERVIERUNGSANFRAGEN</p>
+    <h1>Anfrage <em>beantworten.</em></h1>
+    <p class="reply-lead">Prüfe die Anfrage und wähle eine Antwort.</p>
+    <div id="reply-error" class="reply-error" role="alert" hidden></div>
+    <noscript><p class="reply-error">Bitte aktiviere JavaScript oder antworte direkt auf die Reservierungs-E-Mail.</p></noscript>
+    <div id="reply-workspace" hidden>
+      <section class="reply-summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Die Anfrage</h2>
+        <dl><div><dt>Gast</dt><dd id="guest-name"></dd></div><div><dt>Termin</dt><dd id="guest-slot"></dd></div><div><dt>Personen</dt><dd id="guest-count"></dd></div><div><dt>E-Mail</dt><dd id="guest-email"></dd></div><div><dt>Antwortsprache</dt><dd id="guest-language"></dd></div></dl>
+        <p class="reply-help">Bitte mit der Originalmail abgleichen und Verfügbarkeit prüfen. Alle Zeiten sind Berliner Ortszeit.</p>
+      </section>
+      <section class="reply-actions-section" aria-labelledby="action-title">
+        <h2 id="action-title">Was möchtest du antworten?</h2>
+        <div class="reply-actions" role="group" aria-label="Antwort auswählen">
+          <button type="button" data-action="accept" aria-pressed="false">Annehmen <span aria-hidden="true">↗</span></button>
+          <button type="button" data-action="reject" aria-pressed="false">Ablehnen <span aria-hidden="true">↗</span></button>
+          <button type="button" data-action="earlier" aria-pressed="false">30 Min. früher <span aria-hidden="true">−</span></button>
+          <button type="button" data-action="later" aria-pressed="false">30 Min. später <span aria-hidden="true">+</span></button>
+          <button type="button" data-action="custom" aria-pressed="false">Anderer Termin <span aria-hidden="true">↗</span></button>
+          <button type="button" data-action="question" aria-pressed="false">Rückfrage <span aria-hidden="true">?</span></button>
+        </div>
+        <p class="reply-help">Bei einer neuen Auswahl wird der Antwortentwurf neu erstellt. Ein alternativer Termin bleibt ein Vorschlag, bis der Gast zustimmt.</p>
+        <div id="custom-slot" class="reply-inputs" hidden><label>Anderes Datum<input id="alternative-date" type="date" required></label><label>Andere Uhrzeit<input id="alternative-time" type="time" step="1800" required></label></div>
+        <label id="question-field" class="reply-question" hidden>Deine Rückfrage <span id="question-language"></span><textarea id="question" rows="3" maxlength="1500" placeholder="Schreibe hier deine Frage an den Gast."></textarea><span class="reply-help">Freier Text wird nicht automatisch übersetzt.</span></label>
+      </section>
+      <section id="draft-section" class="reply-draft" aria-labelledby="draft-title" hidden>
+        <h2 id="draft-title">Antwort prüfen</h2>
+        <p id="draft-notice" class="reply-help" role="status"></p>
+        <label>Betreff<input id="reply-subject" type="text" maxlength="200"></label>
+        <label>Nachricht<textarea id="reply-body" rows="14" maxlength="3500" spellcheck="true"></textarea></label>
+        <p id="draft-error" class="reply-error" role="alert" hidden></p>
+        <a id="open-mail" class="button button-dark" aria-disabled="true" tabindex="-1"><span>In Mail öffnen</span><span aria-hidden="true">↗</span></a>
+        <button id="copy-reply" class="reply-copy" type="button" disabled>Antworttext kopieren</button>
+        <p class="reply-help reply-send-note">Im Mailprogramm bitte das Studio-B-Absenderkonto prüfen und auf <strong>Senden</strong> tippen. Diese Seite versendet nichts und speichert keinen Bearbeitungsstatus. Bereits beantwortete Anfragen erkennst du im Postfach.</p>
+        <p id="mail-status" class="reply-help" role="status" hidden></p>
+      </section>
+      <details class="reply-privacy"><summary>Privater Antwortlink</summary><p>Dieser Link enthält Name, E-Mail-Adresse und Termindaten. Bitte nicht weiterleiten. Die Daten werden hier nur im Browser verarbeitet, nicht an einen zusätzlichen Dienst gesendet und nicht lokal gespeichert. Beim Öffnen wird der Link aus der aktuellen Adresszeile entfernt. Zum erneuten Öffnen nutze die Originalmail.</p></details>
+    </div>
+  </main>
+  <footer><span>STUDIO B · ORANIENSTRASSE 168 · BERLIN</span><div><a href="./impressum.html">Impressum</a><a href="./datenschutz.html">Datenschutz</a></div></footer>
+</body>
+</html>
