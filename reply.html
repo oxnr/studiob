@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; frame-src https://accounts.google.com; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://accounts.google.com https://gmail.googleapis.com; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="theme-color" content="#efeae4">
   <title>Reservierung beantworten · Studio B</title>
   <link rel="icon" type="image/svg+xml" href="./assets/brand/favicon.svg">
   <link rel="stylesheet" href="./redesign.css?v=20261021-reply-1">
   <link rel="stylesheet" href="./reply.css?v=20261021-reply-1">
-  <script type="module" src="./reply.js?v=20261021-reply-1"></script>
+  <script src="./site-config.js"></script>
+  <script type="module" src="./reply.js?v=20261123"></script>
 </head>
 <body class="reply-page">
   <a href="#reply-main" class="skip-link">Zum Inhalt</a>
@@ -48,12 +49,13 @@
         <label>Betreff<input id="reply-subject" type="text" maxlength="200"></label>
         <label>Nachricht<textarea id="reply-body" rows="14" maxlength="3500" spellcheck="true"></textarea></label>
         <p id="draft-error" class="reply-error" role="alert" hidden></p>
+        <button type="button" id="send-gmail" class="button button-dark" hidden>Antwort mit Studio-B-Gmail senden</button>
         <a id="open-mail" class="button button-dark" aria-disabled="true" tabindex="-1"><span>In Mail öffnen</span><span aria-hidden="true">↗</span></a>
         <button id="copy-reply" class="reply-copy" type="button" disabled>Antworttext kopieren</button>
-        <p class="reply-help reply-send-note">Im Mailprogramm bitte das Studio-B-Absenderkonto prüfen und auf <strong>Senden</strong> tippen. Diese Seite versendet nichts und speichert keinen Bearbeitungsstatus. Bereits beantwortete Anfragen erkennst du im Postfach.</p>
+        <p class="reply-help reply-send-note">Im Mailprogramm bitte das Studio-B-Absenderkonto prüfen und auf <strong>Senden</strong> tippen.  Bereits beantwortete Anfragen erkennst du im Postfach.</p>
         <p id="mail-status" class="reply-help" role="status" hidden></p>
       </section>
-      <details class="reply-privacy"><summary>Privater Antwortlink</summary><p>Dieser Link enthält Name, E-Mail-Adresse und Termindaten. Bitte nicht weiterleiten. Die Daten werden hier nur im Browser verarbeitet, nicht an einen zusätzlichen Dienst gesendet und nicht lokal gespeichert. Beim Öffnen wird der Link aus der aktuellen Adresszeile entfernt. Zum erneuten Öffnen nutze die Originalmail.</p></details>
+      <details class="reply-privacy"><summary>Privater Antwortlink</summary><p>Dieser Link enthält Name, E-Mail-Adresse und Termindaten. Bitte nicht weiterleiten. Beim Versand mit Gmail erhält Google Empfänger, Betreff und Nachricht. Die Website speichert diese Daten nicht dauerhaft. Beim Öffnen wird der Link aus der aktuellen Adresszeile entfernt. Zum erneuten Öffnen nutze die Originalmail.</p></details>
     </div>
   </main>
   <footer><span>STUDIO B · ORANIENSTRASSE 168 · BERLIN</span><div><a href="./impressum.html">Impressum</a><a href="./datenschutz.html">Datenschutz</a></div></footer>

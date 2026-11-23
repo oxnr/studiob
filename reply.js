@@ -1,3 +1,4 @@
+import { authorize, sendDraft } from './gmail-send.js';
 import { decodeReplyFragment, createReplyDraft, buildMailto, formatReplyDate } from './reservation-reply.js?v=20261021-reply-1';
 
 const get = id => document.getElementById(id);
@@ -112,3 +113,36 @@ get('copy-reply').addEventListener('click', async () => {
   }
   get('mail-status').hidden = false;
 });
+
+
+const clientId = window.STUDIO_B_CONFIG?.gmailClientId;
+if (clientId) {
+  const button = get('send-gmail');
+  const script = document.createElement('script');
+  script.src = 'https://accounts.google.com/gsi/client';
+  script.onload = () => { button.hidden = false; };
+  document.head.append(script);
+  const sent = new Set();
+  button.addEventListener('click', async () => {
+    if (button.disabled || !booking) return;
+    const request = booking;
+    const status = get('mail-status');
+    const key = request.requestId + ':' + action;
+    button.disabled = true;
+    let message;
+    try {
+      if (sent.has(key)) throw Error('Diese Antwort wurde bereits versandt.');
+      const draft = buildMailto(request, {subject: get('reply-subject').value, body: get('reply-body').value});
+      const token = await authorize(clientId);
+      if (booking !== request || draft !== get('open-mail').href) throw Error('Antwort geändert. Bitte erneut prüfen.');
+      await sendDraft(draft, token);
+      sent.add(key);
+      message = 'Gmail hat die Antwort an ' + request.email + ' versandt.';
+    } catch (error) {
+      message = error.message;
+    } finally {
+      button.disabled = false;
+      if (booking === request) { status.textContent = message; status.hidden = false; }
+    }
+  });
+}
