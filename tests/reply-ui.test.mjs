@@ -36,7 +36,11 @@ test('reply controller clears old drafts for incomplete input and a second reque
   assert.equal(page.hash, '');
   assert.equal(get('guest-name').textContent, 'First Guest');
   click('accept');
-  assert.match(get('open-mail').href, /^mailto:first@/);
+  const compose = new URL(get('open-mail').href);
+  assert.equal(compose.origin, 'https://mail.google.com');
+  assert.equal(compose.searchParams.get('authuser'), 'studio.b.bln@gmail.com');
+  assert.equal(compose.searchParams.get('to'), booking.email);
+  assert.equal(compose.searchParams.get('su'), get('reply-subject').value);
   get('reply-body').value = 'Persönlich geänderter Text';
   get('reply-body').events.input();
   assert.equal(new URL(get('open-mail').href).searchParams.get('body'), 'Persönlich geänderter Text');
@@ -69,7 +73,7 @@ test('reply controller clears old drafts for incomplete input and a second reque
   assert.equal(get('question').value, '');
   assert.equal(get('open-mail').href, undefined);
   click('reject');
-  assert.match(get('open-mail').href, /^mailto:second@/);
+  assert.equal(new URL(get('open-mail').href).searchParams.get('to'), 'second@example.invalid');
   assert.match(get('reply-body').value, /cannot offer a table/);
   assert.ok(!get('reply-body').value.includes('First Guest'));
 

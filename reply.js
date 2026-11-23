@@ -9,7 +9,13 @@ function updateMailLink() {
   const link = get('open-mail');
   get('mail-status').hidden = true;
   try {
-    link.href = buildMailto(booking, { subject: get('reply-subject').value, body: get('reply-body').value });
+    const draft = new URL(buildMailto(booking, { subject: get('reply-subject').value, body: get('reply-body').value }));
+    const compose = new URL('https://mail.google.com/mail/u/');
+    compose.search = new URLSearchParams({
+      authuser: 'studio.b.bln@gmail.com', view: 'cm', fs: '1', to: booking.email,
+      su: draft.searchParams.get('subject'), body: draft.searchParams.get('body')
+    });
+    link.href = compose.href;
     link.setAttribute('aria-disabled', 'false');
     link.tabIndex = 0;
     get('copy-reply').disabled = false;
@@ -98,7 +104,7 @@ document.querySelectorAll('[data-action]').forEach(button => button.addEventList
 ['reply-subject', 'reply-body'].forEach(id => get(id).addEventListener('input', updateMailLink));
 get('open-mail').addEventListener('click', event => {
   if (event.currentTarget.getAttribute('aria-disabled') === 'true') { event.preventDefault(); return; }
-  get('mail-status').textContent = 'Bitte im Mailprogramm prüfen und selbst absenden. Falls sich nichts öffnet, antworte direkt auf die Originalmail und kopiere den Entwurf.';
+  get('mail-status').textContent = 'Bitte in Gmail Empfänger und Absender prüfen und auf „Senden“ klicken. Falls sich nichts öffnet, antworte direkt auf die Originalmail und kopiere den Entwurf.';
   get('mail-status').hidden = false;
 });
 get('copy-reply').addEventListener('click', async () => {
